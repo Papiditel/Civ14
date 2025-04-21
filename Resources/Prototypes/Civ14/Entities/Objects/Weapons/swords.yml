@@ -107,7 +107,8 @@
     - type: MeleeWeapon
       damage:
         types:
-          Slash: 44
+          Slash: 12
+          Piercing: 24
       soundHit:
         path: /Audio/Weapons/bladeslice.ogg
     - type: Item
@@ -125,7 +126,8 @@
     - type: MeleeWeapon
       damage:
         types:
-          Slash: 50
+          Slash: 33
+          Piercing: 6
       soundHit:
         path: /Audio/Weapons/bladeslice.ogg
     - type: Item
@@ -143,7 +145,8 @@
     - type: MeleeWeapon
       damage:
         types:
-          Slash: 6
+          Slash: 36
+          Piercing: 3
       soundHit:
         path: /Audio/Weapons/bladeslice.ogg
     - type: Item
@@ -161,7 +164,8 @@
     - type: MeleeWeapon
       damage:
         types:
-          Slash: 6
+          Slash: 31
+          Piercing: 5
       soundHit:
         path: /Audio/Weapons/bladeslice.ogg
     - type: Item
@@ -179,7 +183,7 @@
     - type: MeleeWeapon
       damage:
         types:
-          Slash: 50
+          Slash: 23
       soundHit:
         path: /Audio/Weapons/bladeslice.ogg
     - type: Item
@@ -199,7 +203,7 @@
     - type: MeleeWeapon
       damage:
         types:
-          Slash: 50
+          Slash: 19
       soundHit:
         path: /Audio/Weapons/bladeslice.ogg
     - type: Item
@@ -251,9 +255,11 @@
     - type: Sprite
       sprite: Civ14/Weapons/longquan.rsi
     - type: MeleeWeapon
+      attackRate: 1.1
       damage:
         types:
-          Slash: 39
+          Slash: 30
+          Piercing: 10
       soundHit:
         path: /Audio/Weapons/bladeslice.ogg
     - type: Item
@@ -271,7 +277,8 @@
     - type: MeleeWeapon
       damage:
         types:
-          Slash: 44
+          Slash: 29
+          Piercing: 4
       soundHit:
         path: /Audio/Weapons/bladeslice.ogg
     - type: Item
@@ -289,7 +296,8 @@
     - type: MeleeWeapon
       damage:
         types:
-          Slash: 41
+          Slash: 38
+          Piercing: 3
       soundHit:
         path: /Audio/Weapons/bladeslice.ogg
     - type: Item
@@ -307,7 +315,13 @@
     - type: MeleeWeapon
       damage:
         types:
-          Slash: 55
+          Slash: 38
+    - type: Wieldable
+    - type: IncreaseDamageOnWield 
+      damage:
+        types:
+          Piercing: 5
+          Slash: 8
       soundHit:
         path: /Audio/Weapons/bladeslice.ogg
     - type: Item
@@ -325,7 +339,13 @@
     - type: MeleeWeapon
       damage:
         types:
-          Slash: 105
+          Slash: 35
+    - type: Wieldable
+    - type: IncreaseDamageOnWield 
+      damage:
+        types:
+          Piercing: 8
+          Slash: 13
       soundHit:
         path: /Audio/Weapons/bladeslice.ogg
     - type: Item
@@ -343,7 +363,13 @@
     - type: MeleeWeapon
       damage:
         types:
-          Slash: 99
+          Slash: 32
+    - type: Wieldable
+    - type: IncreaseDamageOnWield 
+      damage:
+        types:
+          Piercing: 7
+          Slash: 13
       soundHit:
         path: /Audio/Weapons/bladeslice.ogg
     - type: Item
@@ -361,9 +387,11 @@
     - type: Sprite
       sprite: Civ14/Weapons/rapier.rsi
     - type: MeleeWeapon
+      attackRate: 1.6
       damage:
         types:
-          Slash: 36
+          Slash: 15
+          Piercing: 24
       soundHit:
         path: /Audio/Weapons/bladeslice.ogg
     - type: Item
@@ -381,7 +409,12 @@
     - type: MeleeWeapon
       damage:
         types:
-          Slash: 121
+          Slash: 36
+    - type: Wieldable
+    - type: IncreaseDamageOnWield 
+      damage:
+        types:
+          Slash: 15 
       soundHit:
         path: /Audio/Weapons/bladeslice.ogg
     - type: Item
@@ -399,7 +432,8 @@
     - type: MeleeWeapon
       damage:
         types:
-          Slash: 33
+          Slash: 18
+          Piercing: 18
       soundHit:
         path: /Audio/Weapons/bladeslice.ogg
     - type: Item
@@ -415,9 +449,11 @@
     - type: Sprite
       sprite: Civ14/Weapons/gaelic_short.rsi
     - type: MeleeWeapon
+      attackRate: 1.2
       damage:
         types:
-          Slash: 33
+          Slash: 16
+          Piercing: 16
       soundHit:
         path: /Audio/Weapons/bladeslice.ogg
     - type: Item
@@ -435,7 +471,7 @@
     - type: MeleeWeapon
       damage:
         types:
-          Slash: 41
+          Slash: 37
       soundHit:
         path: /Audio/Weapons/bladeslice.ogg
     - type: Item
@@ -451,9 +487,11 @@
     - type: Sprite
       sprite: Civ14/Weapons/gladius.rsi
     - type: MeleeWeapon
+      attackRate: 1.2
       damage:
         types:
-          Slash: 41
+          Slash: 23
+          Piercing: 15
       soundHit:
         path: /Audio/Weapons/bladeslice.ogg
     - type: Item
@@ -473,7 +511,7 @@
     - type: MeleeWeapon
       damage:
         types:
-          Slash: 55
+          Slash: 34
       soundHit:
         path: /Audio/Weapons/bladeslice.ogg
     - type: Item
@@ -493,7 +531,7 @@
     - type: MeleeWeapon
       damage:
         types:
-          Slash: 55
+          Slash: 34
       soundHit:
         path: /Audio/Weapons/bladeslice.ogg
     - type: Item
@@ -511,7 +549,8 @@
     - type: MeleeWeapon
       damage:
         types:
-          Slash: 39
+          Slash: 23
+          Piercing: 22
       soundHit:
         path: /Audio/Weapons/bladeslice.ogg
     - type: Item
@@ -531,7 +570,8 @@
     - type: MeleeWeapon
       damage:
         types:
-          Slash: 41
+          Slash: 23
+          Piercing: 21
       soundHit:
         path: /Audio/Weapons/bladeslice.ogg
     - type: Item
@@ -569,7 +609,7 @@
     - type: MeleeWeapon
       damage:
         types:
-          Slash: 55
+          Slash: 42
       soundHit:
         path: /Audio/Weapons/bladeslice.ogg
     - type: Item
