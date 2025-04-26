@@ -815,6 +815,60 @@
       cost: 4
       material: Cloth
       time: 8
+
+- type: entity
+  name: blue tunic
+  parent: ClothingUniformBase
+  id: civ13_uniform_blue_tunic
+  description: A blue tunic.
+  components:
+    - type: Sprite
+      sprite: Civ14/Clothing/exported/uniforms/blue_tunic.rsi
+    - type: Clothing
+      sprite: Civ14/Clothing/exported/uniforms/blue_tunic.rsi
+    - type: Armor
+      modifiers:
+        coefficients:
+          Blunt: 1
+          Slash: 1
+          Piercing: 1
+          Arrow: 1
+          Heat: 1
+          Radiation: 1
+    - type: Construction
+
+      graph: civ13_uniform_blue_tunic
+      node: end
+      cost: 3
+      material: Cloth
+      time: 8
+- type: entity
+  name: red tunic
+  parent: ClothingUniformBase
+  id: civ13_uniform_red_tunic
+  description: A red tunic.
+  components:
+    - type: Sprite
+      sprite: Civ14/Clothing/exported/uniforms/red_tunic.rsi
+    - type: Clothing
+      sprite: Civ14/Clothing/exported/uniforms/red_tunic.rsi
+    - type: Armor
+      modifiers:
+        coefficients:
+          Blunt: 1
+          Slash: 1
+          Piercing: 1
+          Arrow: 1
+          Heat: 1
+          Radiation: 1
+    - type: Construction
+
+      graph: civ13_uniform_red_tunic
+      node: end
+      cost: 3
+      material: Cloth
+      time: 8
+
 - type: entity
   name: toga
   parent: ClothingUniformBase
