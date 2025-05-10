@@ -1,4 +1,3 @@
-
 using Content.Server.GameTicking.Rules.Components;
 using Content.Shared.NPC.Components;
 using Content.Shared.Physics;
@@ -33,6 +32,12 @@ public sealed class CaptureAreaSystem : GameRuleSystem<CaptureAreaRuleComponent>
             ProcessArea(uid, area, frameTime);
         }
     }
+    /// <summary>
+    /// Processes a capture area, determining faction control based on the presence of alive faction members, updating control status, managing capture timers, and dispatching global announcements for control changes, timed warnings, and victory.
+    /// </summary>
+    /// <param name="uid">The entity identifier of the capture area.</param>
+    /// <param name="area">The capture area component to process.</param>
+    /// <param name="frameTime">The elapsed time since the last update, in seconds.</param>
     private void ProcessArea(EntityUid uid, CaptureAreaComponent area, float frameTime)
     {
         var areaXform = _transform.GetMapCoordinates(uid);
@@ -88,6 +93,8 @@ public sealed class CaptureAreaSystem : GameRuleSystem<CaptureAreaRuleComponent>
             // Controller changed (or became contested/empty)
             area.Controller = currentController;
             area.CaptureTimer = 0f; // Reset timer on change
+            area.CaptureTimerAnnouncement1 = false;
+            area.CaptureTimerAnnouncement2 = false;
             if (currentController == "")
             {
                 _chat.DispatchGlobalAnnouncement($"{area.PreviousController} has lost control of {area.Name}!", "Objective", false, null, Color.Red);
@@ -102,6 +109,18 @@ public sealed class CaptureAreaSystem : GameRuleSystem<CaptureAreaRuleComponent>
             // Controller remains the same, increment timer
             area.CaptureTimer += frameTime;
 
+            //announce when theres 2 and 1 minutes left.
+            var timeleft = area.CaptureDuration - area.CaptureTimer;
+            if (timeleft <= 120 && area.CaptureTimerAnnouncement2 == false)
+            {
+                _chat.DispatchGlobalAnnouncement($"Two minutes until {currentController} captures {area.Name}!", "Round", false, null, Color.Blue);
+                area.CaptureTimerAnnouncement2 = true;
+            }
+            else if (timeleft < 60 && area.CaptureTimerAnnouncement1 == false)
+            {
+                _chat.DispatchGlobalAnnouncement($"One minute until {currentController} captures {area.Name}!", "Round", false, null, Color.Blue);
+                area.CaptureTimerAnnouncement1 = true;
+            }
             //Check for capture completion
             if (area.CaptureTimer >= area.CaptureDuration)
             {
@@ -117,6 +136,8 @@ public sealed class CaptureAreaSystem : GameRuleSystem<CaptureAreaRuleComponent>
         {
             // Area is empty or contested, and wasn't previously controlled by a single faction
             area.CaptureTimer = 0f; // Ensure timer is reset/stays reset
+            area.CaptureTimerAnnouncement1 = false;
+            area.CaptureTimerAnnouncement2 = false;
         }
         area.PreviousController = currentController;
     }
