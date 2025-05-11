@@ -126,20 +126,18 @@ public abstract class SharedHumanoidAppearanceSystem : EntitySystem
         LoadProfile(uid, startingSet.Profile, humanoid);
     }
 
+    /// <summary>
+    /// Adds a description to the examination text for a humanoid entity, including its identity, species, and age category.
+    /// </summary>
     private void OnExamined(EntityUid uid, HumanoidAppearanceComponent component, ExaminedEvent args)
     {
         var identity = Identity.Entity(uid, EntityManager);
         var species = GetSpeciesRepresentation(component.Species).ToLower();
         var age = GetAgeRepresentation(component.Species, component.Age);
 
-        // WWDP EDIT
         string locale = "humanoid-appearance-component-examine";
 
-        if (args.Examiner == args.Examined) // Use the selfaware locale when examining yourself
-            locale += "-selfaware";
-
         args.PushText(Loc.GetString(locale, ("user", identity), ("age", age), ("species", species)), 100); // priority for examine
-        // WWDP EDIT END
     }
 
     /// <summary>

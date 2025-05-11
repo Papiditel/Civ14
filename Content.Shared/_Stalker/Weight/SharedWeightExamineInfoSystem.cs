@@ -1,4 +1,4 @@
-﻿using Content.Shared.Examine;
+using Content.Shared.Examine;
 
 namespace Content.Shared._Stalker.Weight;
 
@@ -11,6 +11,9 @@ public sealed class SharedWeightExamineInfoSystem : EntitySystem
         SubscribeLocalEvent<STWeightComponent, ExaminedEvent>(OnWeightExamine);
     }
 
+    /// <summary>
+    /// Adds a colour-coded weight description to the examination event based on the entity's total weight.
+    /// </summary>
     private void OnWeightExamine(EntityUid uid, STWeightComponent component, ExaminedEvent args)
     {
         if (!args.IsInDetailsRange)
@@ -21,8 +24,8 @@ public sealed class SharedWeightExamineInfoSystem : EntitySystem
 
         if (component.Total < 50f)
         {
-             r = HexFromId(255 / 50 * (int)component.Total);
-             g = HexFromId(255);
+            r = HexFromId(255 / 50 * (int)component.Total);
+            g = HexFromId(255);
         }
 
         var colorString = $"#{r}{g}00";
@@ -31,6 +34,11 @@ public sealed class SharedWeightExamineInfoSystem : EntitySystem
         args.PushMarkup(str);
     }
 
+    /// <summary>
+    /// Converts an integer to a two-character hexadecimal string, clamping values below 0 to "00" and above 255 to "FF".
+    /// </summary>
+    /// <param name="id">The integer value to convert.</param>
+    /// <returns>A two-character hexadecimal string representing the clamped value.</returns>
     private string HexFromId(int id)
     {
         switch (id)
@@ -39,7 +47,7 @@ public sealed class SharedWeightExamineInfoSystem : EntitySystem
                 return "00";
 
             case < 16:
-                return  "0" + id.ToString("X");
+                return "0" + id.ToString("X");
 
             case > 255:
                 id = 255;

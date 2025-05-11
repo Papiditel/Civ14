@@ -395,8 +395,13 @@ namespace Content.Shared.Examine
         ///     a consistent order with regards to each other. This is done so that client & server will always
         ///     sort messages the same as well as grouped together properly, even if subscriptions are different.
         ///     You should wrap it in a using() block so popping automatically occurs.
+        /// <summary>
+        /// Begins a new message group for examine text, allowing related messages to be grouped and ordered together.
         /// </summary>
-        public ExamineGroupDisposable PushGroup(string groupName, int priority=0)
+        /// <param name="groupName">The name of the group for identification and ordering.</param>
+        /// <param name="priority">The priority of the group, affecting its order in the final message.</param>
+        /// <returns>A disposable object that ends the group when disposed.</returns>
+        public ExamineGroupDisposable PushGroup(string groupName, int priority = 0)
         {
             // Ensure that other examine events correctly ended their groups.
             DebugTools.Assert(_currentGroupPart == null);
@@ -425,8 +430,12 @@ namespace Content.Shared.Examine
         /// then by ordinal comparison.
         /// </summary>
         /// <seealso cref="PushMarkup"/>
-        /// <seealso cref="PushText"/>
-        public void PushMessage(FormattedMessage message, int priority=0)
+        /// <summary>
+        /// Adds a formatted message as a new line to the examine message, either within the current group or as a separate part.
+        /// </summary>
+        /// <param name="message">The formatted message to add.</param>
+        /// <param name="priority">The priority for ordering this message part.</param>
+        public void PushMessage(FormattedMessage message, int priority = 0)
         {
             if (message.Nodes.Count == 0)
                 return;
@@ -448,8 +457,12 @@ namespace Content.Shared.Examine
         /// then by ordinal comparison.
         /// </summary>
         /// <seealso cref="PushText"/>
-        /// <seealso cref="PushMessage"/>
-        public void PushMarkup(string markup, int priority=0)
+        /// <summary>
+        /// Parses markup text and adds it as a new message part on its own line, with optional priority for ordering.
+        /// </summary>
+        /// <param name="markup">The markup-formatted string to add.</param>
+        /// <param name="priority">Optional priority for message ordering; higher values appear later.</param>
+        public void PushMarkup(string markup, int priority = 0)
         {
             PushMessage(FormattedMessage.FromMarkupOrThrow(markup), priority);
         }
@@ -460,8 +473,12 @@ namespace Content.Shared.Examine
         /// then by ordinal comparison.
         /// </summary>
         /// <seealso cref="PushMarkup"/>
-        /// <seealso cref="PushMessage"/>
-        public void PushText(string text, int priority=0)
+        /// <summary>
+        /// Adds a line of plain text to the examine message, optionally specifying its priority.
+        /// </summary>
+        /// <param name="text">The text to add as a separate message line.</param>
+        /// <param name="priority">The priority for ordering this message part. Higher values appear later.</param>
+        public void PushText(string text, int priority = 0)
         {
             var msg = new FormattedMessage();
             msg.AddText(text);
@@ -496,8 +513,12 @@ namespace Content.Shared.Examine
         /// then by ordinal comparison.
         /// </summary>
         /// <seealso cref="AddText"/>
-        /// <seealso cref="AddMessage"/>
-        public void AddMarkup(string markup, int priority=0)
+        /// <summary>
+        /// Adds markup-formatted text inline to the examine message without a newline.
+        /// </summary>
+        /// <param name="markup">The markup-formatted string to add.</param>
+        /// <param name="priority">The priority for ordering this message part.</param>
+        public void AddMarkup(string markup, int priority = 0)
         {
             AddMessage(FormattedMessage.FromMarkupOrThrow(markup), priority);
         }
@@ -508,8 +529,12 @@ namespace Content.Shared.Examine
         /// then by ordinal comparison.
         /// </summary>
         /// <seealso cref="AddMarkup"/>
-        /// <seealso cref="AddMessage"/>
-        public void AddText(string text, int priority=0)
+        /// <summary>
+        /// Adds plain text inline to the examine message at the specified priority.
+        /// </summary>
+        /// <param name="text">The text to add to the message.</param>
+        /// <param name="priority">The priority for ordering this message part. Higher values appear later.</param>
+        public void AddText(string text, int priority = 0)
         {
             var msg = new FormattedMessage();
             msg.AddText(text);

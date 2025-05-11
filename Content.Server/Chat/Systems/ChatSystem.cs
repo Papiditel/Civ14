@@ -313,7 +313,14 @@ public sealed partial class ChatSystem : SharedChatSystem
     /// <param name="message">The contents of the message</param>
     /// <param name="sender">The sender (Communications Console in Communications Console Announcement)</param>
     /// <param name="playSound">Play the announcement sound</param>
-    /// <param name="colorOverride">Optional color for the announcement message</param>
+    /// <summary>
+    /// Sends a global announcement message to all players, optionally specifying the sender name and message colour.
+    /// </summary>
+    /// <param name="message">The announcement text to broadcast.</param>
+    /// <param name="sender">Optional name to display as the sender of the announcement. Defaults to a generic announcement sender if not provided.</param>
+    /// <param name="playSound">Unused parameter; sound is not played.</param>
+    /// <param name="announcementSound">Unused parameter; announcement sound is not played.</param>
+    /// <param name="colorOverride">Optional colour for the announcement message.</param>
     public void DispatchGlobalAnnouncement(
         string message,
         string? sender = null,
@@ -326,10 +333,7 @@ public sealed partial class ChatSystem : SharedChatSystem
 
         var wrappedMessage = Loc.GetString("chat-manager-sender-announcement-wrap-message", ("sender", sender), ("message", FormattedMessage.EscapeText(message)));
         _chatManager.ChatMessageToAll(ChatChannel.Radio, message, wrappedMessage, default, false, true, colorOverride);
-        if (playSound)
-        {
-            _audio.PlayGlobal(announcementSound == null ? DefaultAnnouncementSound : _audio.ResolveSound(announcementSound), Filter.Broadcast(), true, AudioParams.Default.WithVolume(-2f));
-        }
+
         _adminLogger.Add(LogType.Chat, LogImpact.Low, $"Global announcement from {sender}: {message}");
     }
 

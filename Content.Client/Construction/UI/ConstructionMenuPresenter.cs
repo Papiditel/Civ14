@@ -14,6 +14,8 @@ using Robust.Client.Utility;
 using Robust.Shared.Enums;
 using Robust.Shared.Prototypes;
 using static Robust.Client.UserInterface.Controls.BaseButton;
+using Robust.Shared.Map;
+using Content.Shared.Civ14.CivResearch;
 
 namespace Content.Client.Construction.UI
 {
@@ -30,11 +32,12 @@ namespace Content.Client.Construction.UI
         [Dependency] private readonly IPlacementManager _placementManager = default!;
         [Dependency] private readonly IUserInterfaceManager _uiManager = default!;
         [Dependency] private readonly IPlayerManager _playerManager = default!;
-
+        [Dependency] private readonly IMapManager _mapManager = default!;
+        [Dependency] private readonly ILogManager _logManager = default!;
+        private ISawmill _sawmill = default!;
         private readonly IConstructionMenuView _constructionView;
         private readonly EntityWhitelistSystem _whitelistSystem;
         private readonly SpriteSystem _spriteSystem;
-
         private ConstructionSystem? _constructionSystem;
         private ConstructionPrototype? _selected;
         private List<ConstructionPrototype> _favoritedRecipes = [];
@@ -80,6 +83,8 @@ namespace Content.Client.Construction.UI
 
         /// <summary>
         /// Constructs a new instance of <see cref="ConstructionMenuPresenter" />.
+        /// <summary>
+        /// Initializes the ConstructionMenuPresenter, injecting dependencies, setting up the construction UI, binding event handlers, and populating initial categories and recipes.
         /// </summary>
         public ConstructionMenuPresenter()
         {
@@ -88,7 +93,6 @@ namespace Content.Client.Construction.UI
             _constructionView = new ConstructionMenu();
             _whitelistSystem = _entManager.System<EntityWhitelistSystem>();
             _spriteSystem = _entManager.System<SpriteSystem>();
-
             // This is required so that if we load after the system is initialized, we can bind to it immediately
             if (_systemManager.TryGetEntitySystem<ConstructionSystem>(out var constructionSystem))
                 SystemBindingChanged(constructionSystem);
@@ -139,6 +143,9 @@ namespace Content.Client.Construction.UI
             _constructionView.ResetPlacement();
         }
 
+        /// <summary>
+        /// Handles selection of a construction recipe from the UI, updating the selected recipe and displaying its details.
+        /// </summary>
         private void OnViewRecipeSelected(object? sender, ItemList.Item? item)
         {
             if (item is null)
@@ -148,7 +155,7 @@ namespace Content.Client.Construction.UI
                 return;
             }
 
-            _selected = (ConstructionPrototype) item.Metadata!;
+            _selected = (ConstructionPrototype)item.Metadata!;
             if (_placementManager.IsActive && !_placementManager.Eraser) UpdateGhostPlacement();
             PopulateInfo(_selected);
         }
@@ -167,6 +174,11 @@ namespace Content.Client.Construction.UI
             PopulateInfo(_selected);
         }
 
+        /// <summary>
+        /// Populates the construction recipe list or grid in the UI based on the current search term and selected category, filtering recipes by visibility, player eligibility, whitelist, and research age.
+        /// </summary>
+        /// <param name="sender">The event sender (unused).</param>
+        /// <param name="args">A tuple containing the search string and selected category.</param>
         private void OnViewPopulateRecipes(object? sender, (string search, string category) args)
         {
             var (search, category) = args;
@@ -181,10 +193,18 @@ namespace Content.Client.Construction.UI
                 _selectedCategory = category;
             foreach (var recipe in _prototypeManager.EnumeratePrototypes<ConstructionPrototype>())
             {
-                var CurrentAge = 1; //hardcoded for now
                 if (recipe.Hide)
                     continue;
-                if (CurrentAge < recipe.AgeMin || CurrentAge > recipe.AgeMax)
+                var currentAge = 0;
+                // Get the entity UID associated with the first map
+                var mapId = _mapManager.GetAllMapIds().FirstOrDefault();
+                var mapUid = _mapManager.GetMapEntityId(mapId);
+
+                if (_entManager.TryGetComponent<CivResearchComponent>(mapUid, out var comp))
+                {
+                    currentAge = (int)MathF.Floor(comp.ResearchLevel / 100);
+                }
+                if (currentAge < recipe.AgeMin || currentAge > recipe.AgeMax)
                     continue;
                 if (_playerManager.LocalSession == null
                 || _playerManager.LocalEntity == null
