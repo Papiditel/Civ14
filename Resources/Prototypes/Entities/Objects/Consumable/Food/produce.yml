@@ -861,6 +861,7 @@
               Quantity: 4
     - type: Sprite
       sprite: Objects/Specific/Hydroponics/potato.rsi
+      state: roastpotato
     - type: Extractable
       juiceSolution:
         reagents:

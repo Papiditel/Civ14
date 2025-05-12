@@ -26,6 +26,10 @@
     - type: AmmoCounter
     - type: BallisticAmmoProvider
       autoCycle: false
+      soundRack:
+        path: /Audio/Weapons/Guns/Bolt/bolting.ogg
+      soundInsert:
+        path: /Audio/Weapons/Guns/clip_reload.ogg
       capacity: 5
       proto: civ13_caliber_a762x54
       whitelist:
@@ -52,8 +56,824 @@
       minAngle: -50
       maxAngle: -50
 
+# Imported
+
 - type: entity
-  name: Mosin-Nagant M91/30
+  name: Sharps Rifle
   parent: BaseWeaponBoltAction
-  id: GunMosinNagant
-  description: An imperial Russian bolt-action rifle.
+  id: civ13_boltaction_Sharps_Rifle
+  description: >-
+    A single-shot, falling block rifle, with a long range. Uses .45-70
+    cartridges.
+  components:
+    - type: Sprite
+      sprite: Civ14/Weapons/Guns/sharps.rsi
+    - type: Clothing
+      sprite: Civ14/Weapons/Guns/sharps.rsi
+      quickEquip: false
+      slots:
+        - Back
+    - type: Gun
+      soundGunshot:
+        path: /Audio/Weapons/Guns/Fire/Kar98k.ogg
+    - type: BallisticAmmoProvider
+      capacity: 1
+      proto: civ13_caliber_a4570
+      whitelist:
+        tags:
+          - civ13_caliber_a4570
+
+- type: entity
+  name: Martini-Henry Rifle
+  parent: BaseWeaponBoltAction
+  id: civ13_boltaction_Martini_Henry_Rifle
+  description: >-
+    A single-shot, falling block rifle, with a long range. Uses .577/450
+    cartridges.
+  components:
+    - type: Sprite
+      sprite: Civ14/Weapons/Guns/martini_henry.rsi
+    - type: Clothing
+      sprite: Civ14/Weapons/Guns/martini_henry.rsi
+      quickEquip: false
+      slots:
+        - Back
+    - type: Gun
+      soundGunshot:
+        path: /Audio/Weapons/Guns/Fire/Kar98k.ogg
+    - type: BallisticAmmoProvider
+      capacity: 1
+      proto: civ13_caliber_a577
+      whitelist:
+        tags:
+          - civ13_caliber_a577
+
+- type: entity
+  name: Rolling-Block Rifle
+  parent: BaseWeaponBoltAction
+  id: civ13_boltaction_Rolling_Block_Rifle
+  description: >-
+    A single-shot, rolling block rifle, with a long range. Uses .45-70 Gov
+    cartridges.
+  components:
+    - type: Sprite
+      sprite: Civ14/Weapons/Guns/rollingblock.rsi
+    - type: Clothing
+      sprite: Civ14/Weapons/Guns/rollingblock.rsi
+      quickEquip: false
+      slots:
+        - Back
+    - type: Gun
+      soundGunshot:
+        path: /Audio/Weapons/Guns/Fire/Kar98k.ogg
+    - type: BallisticAmmoProvider
+      capacity: 1
+      proto: civ13_caliber_a4570
+      whitelist:
+        tags:
+          - civ13_caliber_a4570
+
+- type: entity
+  name: Rolling-Block Rifle
+  parent: civ13_boltaction_Rolling_Block_Rifle
+  id: civ13_boltaction_Rolling_Block_Rifle_43
+  description: >-
+    A single-shot, rolling block rifle, with a long range. This Spanish one uses
+    .43 cartridges.
+  components:
+    - type: BallisticAmmoProvider
+      capacity: 5
+      proto: civ13_caliber_a43
+      whitelist:
+        tags:
+          - civ13_caliber_a43
+
+- type: entity
+  name: Makeshift Bolt
+  parent: BaseWeaponBoltAction
+  id: civ13_boltaction_Makeshift_Bolt
+  description: A single-shot, makeshift bolt rifle.
+  components:
+    - type: Sprite
+      sprite: Civ14/Weapons/Guns/makeshiftbolt.rsi
+    - type: Clothing
+      sprite: Civ14/Weapons/Guns/makeshiftbolt.rsi
+      quickEquip: false
+      slots:
+        - Back
+    - type: Gun
+      soundGunshot:
+        path: /Audio/Weapons/Guns/Fire/Mosin.ogg
+    - type: BallisticAmmoProvider
+      capacity: 1
+      proto: civ13_caliber_a762x54
+      whitelist:
+        tags:
+          - civ13_caliber_a762x54
+
+- type: entity
+  name: Barrett M99
+  parent: BaseWeaponBoltAction
+  id: civ13_boltaction_Barrett_M99
+  description: A single-shot anti-material rifle designed by the Barrett Firearms Company.
+  components:
+    - type: Sprite
+      sprite: Civ14/Weapons/Guns/m99.rsi
+    - type: Clothing
+      sprite: Civ14/Weapons/Guns/m99.rsi
+      quickEquip: false
+      slots:
+        - Back
+    - type: STWeight
+      self: 12
+    - type: Item
+      size: Ginormous
+    - type: Gun
+      soundGunshot:
+        path: /Audio/Weapons/Guns/Fire/BarrettM99.ogg
+    - type: BallisticAmmoProvider
+      capacity: 1
+      proto: civ13_caliber_a50cal
+      whitelist:
+        tags:
+          - civ13_caliber_a50cal
+
+- type: entity
+  name: PTRD-41
+  parent: BaseWeaponBoltAction
+  id: civ13_boltaction_PTRD_41
+  description: >-
+    A soviet anti-material rifle chambered in 14.5x114mm designed to take out
+    tanks.
+  components:
+    - type: Sprite
+      sprite: Civ14/Weapons/Guns/ptrd.rsi
+    - type: Clothing
+      sprite: Civ14/Weapons/Guns/ptrd.rsi
+      quickEquip: false
+      slots:
+        - Back
+    - type: STWeight
+      self: 15
+    - type: Item
+      size: Ginormous
+    - type: Gun
+      soundGunshot:
+        path: /Audio/Weapons/Guns/Fire/ptrd.ogg
+    - type: BallisticAmmoProvider
+      capacity: 1
+      proto: civ13_caliber_a145
+      whitelist:
+        tags:
+          - civ13_caliber_a145
+
+- type: entity
+  name: PzB 39
+  parent: BaseWeaponBoltAction
+  id: civ13_boltaction_PzB_39
+  description: A German anti-tank rifle chambered in 7.92x94mm.
+  components:
+    - type: Sprite
+      sprite: Civ14/Weapons/Guns/pzb39.rsi
+    - type: Clothing
+      sprite: Civ14/Weapons/Guns/pzb39.rsi
+      quickEquip: false
+      slots:
+        - Back
+    - type: STWeight
+      self: 15
+    - type: Item
+      size: Ginormous
+    - type: Gun
+      soundGunshot:
+        path: /Audio/Weapons/Guns/Fire/ptrd.ogg
+    - type: BallisticAmmoProvider
+      capacity: 1
+      proto: civ13_caliber_a792x94
+      whitelist:
+        tags:
+          - civ13_caliber_a792x94
+
+- type: entity
+  name: Mosin M1891
+  parent: BaseWeaponBoltAction
+  id: civ13_boltaction_Mosin
+  description: Russian bolt-action rifle chambered in 7.62x54mmR cartridges.
+  components:
+    - type: Sprite
+      sprite: Civ14/Weapons/Guns/mosin.rsi
+    - type: Clothing
+      sprite: Civ14/Weapons/Guns/mosin.rsi
+      quickEquip: false
+      slots:
+        - Back
+    - type: Gun
+      soundGunshot:
+        path: /Audio/Weapons/Guns/Fire/Mosin.ogg
+    - type: BallisticAmmoProvider
+      capacity: 5
+      proto: civ13_caliber_a762x54
+      whitelist:
+        tags:
+          - civ13_caliber_a762x54
+
+- type: entity
+  name: Mosin M91/30
+  parent: civ13_boltaction_Mosin
+  id: civ13_boltaction_Mosin_30
+  description: >-
+    A modernized version of the original M1891. Bolt-action rifle chambered in
+    7.62x54mmR cartridges.
+  components:
+    - type: Sprite
+      sprite: Civ14/Weapons/Guns/mosin30.rsi
+    - type: Clothing
+      sprite: Civ14/Weapons/Guns/mosin30.rsi
+      quickEquip: false
+      slots:
+        - Back
+    - type: STWeight
+      self: 4
+    - type: Gun
+      soundGunshot:
+        path: /Audio/Weapons/Guns/Fire/Mosin.ogg
+    - type: BallisticAmmoProvider
+      capacity: 5
+      proto: civ13_caliber_a762x54
+      whitelist:
+        tags:
+          - civ13_caliber_a762x54
+
+- type: entity
+  name: Mosin-Nagant "Obrez"
+  parent: civ13_boltaction_Mosin
+  id: civ13_boltaction_Mosin_Nagant_Obrez
+  description: A makeshift sawn-off Mosin "pistol", chambered in 7.62x54mmR cartridges.
+  components:
+    - type: Sprite
+      sprite: Civ14/Weapons/Guns/obrez.rsi
+    - type: Clothing
+      sprite: Civ14/Weapons/Guns/obrez.rsi
+      quickEquip: false
+      slots:
+        - Back
+        - Belt
+    - type: STWeight
+      self: 2.5
+    - type: Item
+      size: Normal
+    - type: Gun
+      soundGunshot:
+        path: /Audio/Weapons/Guns/Fire/Mosin.ogg
+    - type: BallisticAmmoProvider
+      capacity: 5
+      proto: civ13_caliber_a762x54
+      whitelist:
+        tags:
+          - civ13_caliber_a762x54
+
+- type: entity
+  name: Arisaka Type 30
+  parent: BaseWeaponBoltAction
+  id: civ13_boltaction_Arisaka_Type_30
+  description: Japanese bolt-action rifle chambered in 6.50x50mm Arisaka ammunition.
+  components:
+    - type: Sprite
+      sprite: Civ14/Weapons/Guns/arisaka30.rsi
+    - type: Clothing
+      sprite: Civ14/Weapons/Guns/arisaka30.rsi
+      quickEquip: false
+      slots:
+        - Back
+    - type: Gun
+      soundGunshot:
+        path: /Audio/Weapons/Guns/Fire/Kar98k.ogg
+    - type: BallisticAmmoProvider
+      capacity: 5
+      proto: civ13_caliber_a65x50
+      whitelist:
+        tags:
+          - civ13_caliber_a65x50
+
+- type: entity
+  name: Arisaka Type 35
+  parent: civ13_boltaction_Arisaka_Type_30
+  id: civ13_boltaction_Arisaka_Type_35
+  description: Japanese bolt-action rifle chambered in 6.50x50mm Arisaka ammunition.
+  components:
+    - type: Sprite
+      sprite: Civ14/Weapons/Guns/arisaka35.rsi
+    - type: Clothing
+      sprite: Civ14/Weapons/Guns/arisaka35.rsi
+      quickEquip: false
+      slots:
+        - Back
+
+- type: entity
+  name: Arisaka Type 38
+  parent: civ13_boltaction_Arisaka_Type_30
+  id: civ13_boltaction_Arisaka_Type_38
+  description: Japanese bolt-action rifle chambered in 6.50x50mm Arisaka ammunition.
+  components:
+    - type: Sprite
+      sprite: Civ14/Weapons/Guns/arisaka38.rsi
+    - type: Clothing
+      sprite: Civ14/Weapons/Guns/arisaka38.rsi
+      quickEquip: false
+      slots:
+        - Back
+
+- type: entity
+  name: Arisaka Type 99
+  parent: civ13_boltaction_Arisaka_Type_30
+  id: civ13_boltaction_Arisaka_Type_99
+  description: Japanese bolt-action rifle chambered in 7.7x58mm Arisaka ammunition.
+  components:
+    - type: Sprite
+      sprite: Civ14/Weapons/Guns/arisaka99.rsi
+    - type: Clothing
+      sprite: Civ14/Weapons/Guns/arisaka99.rsi
+      quickEquip: false
+      slots:
+        - Back
+    - type: STWeight
+      self: 4
+    - type: BallisticAmmoProvider
+      capacity: 5
+      proto: civ13_caliber_a77x58
+      whitelist:
+        tags:
+          - civ13_caliber_a77x58
+
+- type: entity
+  name: Training Arisaka Type 99
+  parent: BaseWeaponBoltAction
+  id: civ13_boltaction_Training_Arisaka_Type_99
+  description: >-
+    Japanese bolt-action rifle chambered in 7.7x58mm Arisaka ammunition. This
+    one is a training rifle that shoots wooden bullets.
+  components:
+    - type: Sprite
+      sprite: Civ14/Weapons/Guns/arisaka99.rsi
+    - type: Clothing
+      sprite: Civ14/Weapons/Guns/arisaka99.rsi
+      quickEquip: false
+      slots:
+        - Back
+    - type: STWeight
+      self: 4
+    - type: Gun
+      soundGunshot:
+        path: /Audio/Weapons/Guns/Fire/rifle.ogg
+    - type: BallisticAmmoProvider
+      capacity: 5
+      proto: civ13_caliber_a77x58_wood
+      whitelist:
+        tags:
+          - civ13_caliber_a77x58_wood
+
+- type: entity
+  name: Gewehr 71
+  parent: BaseWeaponBoltAction
+  id: civ13_boltaction_Gewehr_71
+  description: A german bolt-action rifle chambered in 7.65x53mm Mauser ammunition.
+  components:
+    - type: Sprite
+      sprite: Civ14/Weapons/Guns/gewehr71.rsi
+    - type: Clothing
+      sprite: Civ14/Weapons/Guns/gewehr71.rsi
+      quickEquip: false
+      slots:
+        - Back
+    - type: STWeight
+      self: 6
+    - type: Gun
+      soundGunshot:
+        path: /Audio/Weapons/Guns/Fire/Kar98k.ogg
+    - type: BallisticAmmoProvider
+      capacity: 5
+      proto: civ13_caliber_a765x53
+      whitelist:
+        tags:
+          - civ13_caliber_a765x53
+
+- type: entity
+  name: Madsen M47
+  parent: BaseWeaponBoltAction
+  id: civ13_boltaction_Madsen_M47
+  description: A Danish bolt action.
+  components:
+    - type: Sprite
+      sprite: Civ14/Weapons/Guns/madsenm47.rsi
+    - type: Clothing
+      sprite: Civ14/Weapons/Guns/madsenm47.rsi
+      quickEquip: false
+      slots:
+        - Back
+    - type: Gun
+      soundGunshot:
+        path: /Audio/Weapons/Guns/Fire/Kar98k.ogg
+    - type: BallisticAmmoProvider
+      capacity: 5
+      proto: civ13_caliber_a765x53
+      whitelist:
+        tags:
+          - civ13_caliber_a765x53
+
+- type: entity
+  name: Mauser M1890
+  parent: civ13_boltaction_Gewehr_71
+  id: civ13_boltaction_Mauser_M1890
+  description: >-
+    A german bolt-action rifle commonly known as the "Ottoman Mauser", chambered
+    in 7.65x53mm Mauser ammunition.
+  components:
+    - type: Sprite
+      sprite: Civ14/Weapons/Guns/mauser90.rsi
+    - type: Clothing
+      sprite: Civ14/Weapons/Guns/mauser90.rsi
+      quickEquip: false
+      slots:
+        - Back
+
+    - type: BallisticAmmoProvider
+      capacity: 5
+      proto: civ13_caliber_a765x53
+      whitelist:
+        tags:
+          - civ13_caliber_a765x53
+
+- type: entity
+  name: Mauser M1893
+  parent: civ13_boltaction_Mauser_M1890
+  id: civ13_boltaction_Mauser_M1893
+  description: >-
+    A german bolt-action rifle commonly known as the "Spanish Mauser", chambered
+    in 7x57mm Mauser ammunition.
+  components:
+    - type: Sprite
+      sprite: Civ14/Weapons/Guns/mauser93.rsi
+    - type: Clothing
+      sprite: Civ14/Weapons/Guns/mauser93.rsi
+      quickEquip: false
+      slots:
+        - Back
+
+    - type: BallisticAmmoProvider
+      capacity: 5
+      proto: civ13_caliber_a7x57
+      whitelist:
+        tags:
+          - civ13_caliber_a7x57
+
+- type: entity
+  name: Mauser M1893 (Ottoman)
+  parent: civ13_boltaction_Mauser_M1893
+  id: civ13_boltaction_Mauser_M1893_Ottoman
+  description: >-
+    An Ottoman version of the "Spanish Mauser", chambered in 7.65x53mm Mauser
+    ammunition.
+  components:
+    - type: BallisticAmmoProvider
+      capacity: 5
+      proto: civ13_caliber_a765x53
+      whitelist:
+        tags:
+          - civ13_caliber_a765x53
+
+- type: entity
+  name: Gewehr 98
+  parent: BaseWeaponBoltAction
+  id: civ13_boltaction_Gewehr_98
+  description: A german bolt-action rifle chambered in 7.92x57mm Mauser ammunition.
+  components:
+    - type: Sprite
+      sprite: Civ14/Weapons/Guns/gewehr98.rsi
+    - type: Clothing
+      sprite: Civ14/Weapons/Guns/gewehr98.rsi
+      quickEquip: false
+      slots:
+        - Back
+    - type: Gun
+      soundGunshot:
+        path: /Audio/Weapons/Guns/Fire/Kar98k.ogg
+    - type: BallisticAmmoProvider
+      capacity: 5
+      proto: civ13_caliber_a792x57
+      whitelist:
+        tags:
+          - civ13_caliber_a792x57
+
+- type: entity
+  name: Mauser M1903
+  parent: civ13_boltaction_Gewehr_98
+  id: civ13_boltaction_Mauser_M1903
+  description: >-
+    The ottoman version of the Mauser M1898, chambered in 7.65x53mm Mauser
+    ammunition.
+  components:
+    - type: BallisticAmmoProvider
+      capacity: 5
+      proto: civ13_caliber_a765x53
+      whitelist:
+        tags:
+          - civ13_caliber_a765x53
+
+- type: entity
+  name: Karabiner 98a
+  parent: civ13_boltaction_Gewehr_98
+  id: civ13_boltaction_Karabiner_98a
+  description: >-
+    A shortened carabine version of the Gewehr 98, chambered in 7.92x57mm Mauser
+    ammunition.
+  components:
+    - type: Sprite
+      sprite: Civ14/Weapons/Guns/kar98a.rsi
+    - type: Clothing
+      sprite: Civ14/Weapons/Guns/kar98a.rsi
+      quickEquip: false
+      slots:
+        - Back
+
+- type: entity
+  name: Karabiner 98k
+  parent: civ13_boltaction_Gewehr_98
+  id: civ13_boltaction_Karabiner_98k
+  description: >-
+    A shortened, modernized carabine version of the Gewehr 98, chambered in
+    7.92x57mm Mauser ammunition.
+  components:
+    - type: Sprite
+      sprite: Civ14/Weapons/Guns/kar98k.rsi
+    - type: Clothing
+      sprite: Civ14/Weapons/Guns/kar98k.rsi
+      quickEquip: false
+      slots:
+        - Back
+
+- type: entity
+  name: Chiang Kai-Shek Rifle
+  parent: civ13_boltaction_Gewehr_98
+  id: civ13_boltaction_Chiang_Kai_Shek
+  description: >-
+    A shortened, modernized carabine version of the Gewehr 98, chambered in
+    7.92x57mm Mauser ammunition. This one being adopted by the Chinese.
+  components:
+    - type: Sprite
+      sprite: Civ14/Weapons/Guns/kar98a.rsi
+    - type: Clothing
+      sprite: Civ14/Weapons/Guns/kar98a.rsi
+      quickEquip: false
+      slots:
+        - Back
+
+- type: entity
+  name: Volkssturmgewehr
+  parent: BaseWeaponBoltAction
+  id: civ13_boltaction_Volkssturmgewehr
+  description: A very primitive german bolt action rifle chambered in 7.92x33mm Kurz.
+  components:
+    - type: Sprite
+      sprite: Civ14/Weapons/Guns/vg1.rsi
+    - type: Clothing
+      sprite: Civ14/Weapons/Guns/vg1.rsi
+      quickEquip: false
+      slots:
+        - Back
+    - type: Gun
+      soundGunshot:
+        path: /Audio/Weapons/Guns/Fire/stg.ogg
+    - type: BallisticAmmoProvider
+      capacity: 10
+      proto: civ13_caliber_a792x33
+      whitelist:
+        tags:
+          - civ13_caliber_a792x33
+
+- type: entity
+  name: Pattern 1914 Enfield
+  parent: BaseWeaponBoltAction
+  id: civ13_boltaction_Pattern_1914_Enfield
+  description: >-
+    A british bolt-action rifle based on the Mauser line, chambered in .303
+    Enfield ammunition.
+  components:
+    - type: Sprite
+      sprite: Civ14/Weapons/Guns/p14enfield.rsi
+    - type: Clothing
+      sprite: Civ14/Weapons/Guns/p14enfield.rsi
+      quickEquip: false
+      slots:
+        - Back
+    - type: Gun
+      soundGunshot:
+        path: /Audio/Weapons/Guns/Fire/Kar98k.ogg
+    - type: BallisticAmmoProvider
+      capacity: 5
+      proto: civ13_caliber_a303
+      whitelist:
+        tags:
+          - civ13_caliber_a303
+
+- type: entity
+  name: carcano 1891
+  parent: BaseWeaponBoltAction
+  id: civ13_boltaction_carcano_1891
+  description: An italian bolt-action rifle chambered in 6.50x52mm ammunition.
+  components:
+    - type: Sprite
+      sprite: Civ14/Weapons/Guns/carcano.rsi
+    - type: Clothing
+      sprite: Civ14/Weapons/Guns/carcano.rsi
+      quickEquip: false
+      slots:
+        - Back
+    - type: Gun
+      soundGunshot:
+        path: /Audio/Weapons/Guns/Fire/Kar98k.ogg
+    - type: BallisticAmmoProvider
+      capacity: 5
+      proto: civ13_caliber_a65x52
+      whitelist:
+        tags:
+          - civ13_caliber_a65x52
+
+- type: entity
+  name: Type-22 Murata
+  parent: BaseWeaponBoltAction
+  id: civ13_boltaction_Type_22_Murata
+  description: Japanese bolt-action rifle chambered in 8x53mm Murata ammunition.
+  components:
+    - type: Sprite
+      sprite: Civ14/Weapons/Guns/murata.rsi
+    - type: Clothing
+      sprite: Civ14/Weapons/Guns/murata.rsi
+      quickEquip: false
+      slots:
+        - Back
+    - type: Gun
+      soundGunshot:
+        path: /Audio/Weapons/Guns/Fire/Kar98k.ogg
+    - type: BallisticAmmoProvider
+      capacity: 8
+      proto: civ13_caliber_a8x53
+      whitelist:
+        tags:
+          - civ13_caliber_a8x53
+
+- type: entity
+  name: Berdan M1870
+  parent: BaseWeaponBoltAction
+  id: civ13_boltaction_Berdan_M1870
+  description: Russian bolt-action rifle chambered in 7.62x54mmR cartridges.
+  components:
+    - type: Sprite
+      sprite: Civ14/Weapons/Guns/berdanka.rsi
+    - type: Clothing
+      sprite: Civ14/Weapons/Guns/berdanka.rsi
+      quickEquip: false
+      slots:
+        - Back
+    - type: Gun
+      soundGunshot:
+        path: /Audio/Weapons/Guns/Fire/Kar98k.ogg
+    - type: BallisticAmmoProvider
+      capacity: 5
+      proto: civ13_caliber_a762x54
+      whitelist:
+        tags:
+          - civ13_caliber_a762x54
+
+- type: entity
+  name: Lee-Enfield Mk. III
+  parent: BaseWeaponBoltAction
+  id: civ13_boltaction_Lee_Enfield_Mk._III
+  description: >-
+    A 10-shot, bolt-action rifle, standard issue for british military, chambered
+    in .303 british.
+  components:
+    - type: Sprite
+      sprite: Civ14/Weapons/Guns/enfield.rsi
+    - type: Clothing
+      sprite: Civ14/Weapons/Guns/enfield.rsi
+      quickEquip: false
+      slots:
+        - Back
+    - type: Gun
+      soundGunshot:
+        path: /Audio/Weapons/Guns/Fire/Kar98k.ogg
+    - type: BallisticAmmoProvider
+      capacity: 10
+      proto: civ13_caliber_a303
+      whitelist:
+        tags:
+          - civ13_caliber_a303
+
+- type: entity
+  name: Lebel 1886/M93
+  parent: BaseWeaponBoltAction
+  id: civ13_boltaction_Lebel
+  description: >-
+    A 8 round, bolt-action rifle, standard issue for french military, chambered
+    in 8x50mmR Lebel.
+  components:
+    - type: Sprite
+      sprite: Civ14/Weapons/Guns/lebel.rsi
+    - type: Clothing
+      sprite: Civ14/Weapons/Guns/lebel.rsi
+      quickEquip: false
+      slots:
+        - Back
+    - type: Gun
+      soundGunshot:
+        path: /Audio/Weapons/Guns/Fire/Kar98k.ogg
+    - type: BallisticAmmoProvider
+      capacity: 8
+      proto: civ13_caliber_a8x50
+      whitelist:
+        tags:
+          - civ13_caliber_a8x50
+
+- type: entity
+  name: Berthier M1907/15
+  parent: BaseWeaponBoltAction
+  id: civ13_boltaction_Berthier_15
+  description: A 3 round, bolt-action carbine, chambered in 8x50mmR Lebel.
+  components:
+    - type: Sprite
+      sprite: Civ14/Weapons/Guns/berthier.rsi
+    - type: Clothing
+      sprite: Civ14/Weapons/Guns/berthier.rsi
+      quickEquip: false
+      slots:
+        - Back
+    - type: Gun
+      soundGunshot:
+        path: /Audio/Weapons/Guns/Fire/Kar98k.ogg
+    - type: BallisticAmmoProvider
+      capacity: 3
+      proto: civ13_caliber_a8x50
+      whitelist:
+        tags:
+          - civ13_caliber_a8x50
+
+- type: entity
+  name: Berthier M1907/16
+  parent: civ13_boltaction_Berthier_15
+  id: civ13_boltaction_Berthier_16
+  description: A 5 round, bolt-action carbine, chambered in 8x50mmR Lebel.
+  components:
+    - type: BallisticAmmoProvider
+      capacity: 5
+      proto: civ13_caliber_a8x50
+      whitelist:
+        tags:
+          - civ13_caliber_a8x50
+
+- type: entity
+  name: M24 SWS
+  parent: BaseWeaponBoltAction
+  id: civ13_boltaction_M24_SWS
+  description: A military version of the Remington 700 rifle.
+  components:
+    - type: Sprite
+      sprite: Civ14/Weapons/Guns/m24.rsi
+    - type: Clothing
+      sprite: Civ14/Weapons/Guns/m24.rsi
+      quickEquip: false
+      slots:
+        - Back
+    - type: Gun
+      soundGunshot:
+        path: /Audio/Weapons/Guns/Fire/Kar98k.ogg
+    - type: BallisticAmmoProvider
+      capacity: 5
+      proto: civ13_caliber_a762x51
+      whitelist:
+        tags:
+          - civ13_caliber_a762x51
+
+- type: entity
+  name: M1903 Springfield
+  parent: BaseWeaponBoltAction
+  id: civ13_boltaction_M1903_Springfield
+  description: >-
+    A bolt-action rifle made in 1903, chambered in .30-06 with a 5 round
+    internal magazine.
+  components:
+    - type: Sprite
+      sprite: Civ14/Weapons/Guns/springfield_ww2.rsi
+    - type: Clothing
+      sprite: Civ14/Weapons/Guns/springfield_ww2.rsi
+      quickEquip: false
+      slots:
+        - Back
+    - type: Gun
+      soundGunshot:
+        path: /Audio/Weapons/Guns/Fire/Kar98k.ogg
+    - type: BallisticAmmoProvider
+      capacity: 5
+      proto: civ13_caliber_a3006
+      whitelist:
+        tags:
+          - civ13_caliber_a3006
