@@ -1,9 +1,10 @@
 - type: entity
   name: bolt-action rifle
-  parent: BaseItem
+  parent: BaseGunCiv
   id: BaseWeaponBoltAction
   description: A bolt-action rifle.
   abstract: true
+  suffix: Bolt-Action
   components:
     - type: Sprite
       sprite: Civ14/Weapons/Guns/mosin.rsi
@@ -14,6 +15,7 @@
           map: ["enum.GunVisualLayers.Mag"]
     - type: STWeight
       self: 5
+    - type: GunRequiresWield
     - type: Item
       size: Large
       shape:
@@ -45,17 +47,16 @@
         - SemiAuto
       soundGunshot:
         path: /Audio/Weapons/Guns/Fire/Mosin.ogg
-      projectileSpeed: 50
-      minAngle: 50
-      maxAngle: 80
-      angleIncrease: 5
-      angleDecay: 25
-      fireRate: 0.3
+      projectileSpeed: 50 # High velocity for rifle rounds
+      minAngle: 3 # Base accuracy for an aimed shot (very good)
+      maxAngle: 60 # Maximum upward/sideways kick angle
+      angleIncrease: 20 # Initial jump/kick from firing a powerful round
+      angleDecay: 35 # Speed of aim recovery/settling after shot
+      fireRate: 0.8 # Approx 1.25 sec per shot (cycling + re-aim)
     - type: Wieldable
     - type: GunWieldBonus
       minAngle: -50
       maxAngle: -50
-
 # Imported
 
 - type: entity
@@ -73,7 +74,13 @@
       quickEquip: false
       slots:
         - Back
-    - type: Gun
+    - type: Gun # Single-shot, large caliber
+      projectileSpeed: 45
+      minAngle: 4
+      maxAngle: 70
+      angleIncrease: 25
+      angleDecay: 30
+      fireRate: 0.4 # Slow to load single round
       soundGunshot:
         path: /Audio/Weapons/Guns/Fire/Kar98k.ogg
     - type: BallisticAmmoProvider
@@ -98,7 +105,13 @@
       quickEquip: false
       slots:
         - Back
-    - type: Gun
+    - type: Gun # Single-shot, large caliber
+      projectileSpeed: 45
+      minAngle: 4
+      maxAngle: 70
+      angleIncrease: 25
+      angleDecay: 30
+      fireRate: 0.4 # Slow to load single round
       soundGunshot:
         path: /Audio/Weapons/Guns/Fire/Kar98k.ogg
     - type: BallisticAmmoProvider
@@ -123,7 +136,13 @@
       quickEquip: false
       slots:
         - Back
-    - type: Gun
+    - type: Gun # Single-shot, large caliber
+      projectileSpeed: 45
+      minAngle: 4
+      maxAngle: 70
+      angleIncrease: 25
+      angleDecay: 30
+      fireRate: 0.4 # Slow to load single round
       soundGunshot:
         path: /Audio/Weapons/Guns/Fire/Kar98k.ogg
     - type: BallisticAmmoProvider
@@ -161,7 +180,13 @@
       quickEquip: false
       slots:
         - Back
-    - type: Gun
+    - type: Gun # Single-shot, makeshift
+      projectileSpeed: 48
+      minAngle: 10 # Poorly made
+      maxAngle: 90
+      angleIncrease: 30 # Unwieldy
+      angleDecay: 20
+      fireRate: 0.3 # Clumsy to reload
       soundGunshot:
         path: /Audio/Weapons/Guns/Fire/Mosin.ogg
     - type: BallisticAmmoProvider
@@ -189,6 +214,12 @@
     - type: Item
       size: Ginormous
     - type: Gun
+      projectileSpeed: 60 # Very high velocity .50 BMG
+      minAngle: 5 # Precision despite power
+      maxAngle: 120 # Massive kick
+      angleIncrease: 50
+      angleDecay: 15 # Slow to resettle
+      fireRate: 0.2 # Very slow, single heavy round
       soundGunshot:
         path: /Audio/Weapons/Guns/Fire/BarrettM99.ogg
     - type: BallisticAmmoProvider
@@ -218,6 +249,12 @@
     - type: Item
       size: Ginormous
     - type: Gun
+      projectileSpeed: 65 # 14.5mm
+      minAngle: 6
+      maxAngle: 150 # Extreme kick
+      angleIncrease: 60
+      angleDecay: 10
+      fireRate: 0.15 # Extremely slow, single heavy round
       soundGunshot:
         path: /Audio/Weapons/Guns/Fire/ptrd.ogg
     - type: BallisticAmmoProvider
@@ -245,6 +282,12 @@
     - type: Item
       size: Ginormous
     - type: Gun
+      projectileSpeed: 62 # 7.92x94mm Patrone 318
+      minAngle: 6
+      maxAngle: 140
+      angleIncrease: 55
+      angleDecay: 12
+      fireRate: 0.18 # Very slow, single heavy round
       soundGunshot:
         path: /Audio/Weapons/Guns/Fire/ptrd.ogg
     - type: BallisticAmmoProvider
@@ -267,7 +310,7 @@
       quickEquip: false
       slots:
         - Back
-    - type: Gun
+    - type: Gun # Standard Mosin stats (inherits from base)
       soundGunshot:
         path: /Audio/Weapons/Guns/Fire/Mosin.ogg
     - type: BallisticAmmoProvider
@@ -295,6 +338,7 @@
     - type: STWeight
       self: 4
     - type: Gun
+      # Inherits most from BaseWeaponBoltAction, sound is same
       soundGunshot:
         path: /Audio/Weapons/Guns/Fire/Mosin.ogg
     - type: BallisticAmmoProvider
@@ -323,6 +367,12 @@
     - type: Item
       size: Normal
     - type: Gun
+      projectileSpeed: 35 # Sawn-off, lower velocity
+      minAngle: 15 # Very inaccurate base
+      maxAngle: 100 # Wild kick
+      angleIncrease: 40
+      angleDecay: 20 # Hard to control
+      fireRate: 0.7 # Clumsier to cycle
       soundGunshot:
         path: /Audio/Weapons/Guns/Fire/Mosin.ogg
     - type: BallisticAmmoProvider
@@ -345,7 +395,12 @@
       quickEquip: false
       slots:
         - Back
-    - type: Gun
+    - type: Gun # 6.5x50mm Arisaka
+      projectileSpeed: 48
+      minAngle: 3
+      maxAngle: 55 # Milder kick
+      angleIncrease: 18
+      angleDecay: 38
       soundGunshot:
         path: /Audio/Weapons/Guns/Fire/Kar98k.ogg
     - type: BallisticAmmoProvider
@@ -399,11 +454,21 @@
     - type: STWeight
       self: 4
     - type: BallisticAmmoProvider
+      # Gun component will inherit from Arisaka Type 30 (parent)
+      # and then be overridden here for 7.7mm stats
       capacity: 5
       proto: civ13_caliber_a77x58
       whitelist:
         tags:
           - civ13_caliber_a77x58
+    - type: Gun # 7.7x58mm Arisaka
+      projectileSpeed: 49
+      minAngle: 3
+      maxAngle: 60
+      angleIncrease: 20
+      angleDecay: 35
+      # fireRate inherits 0.8
+      # soundGunshot inherits Kar98k.ogg
 
 - type: entity
   name: Training Arisaka Type 99
@@ -423,6 +488,12 @@
     - type: STWeight
       self: 4
     - type: Gun
+      projectileSpeed: 15 # Wooden bullet
+      minAngle: 5
+      maxAngle: 20 # Very little kick
+      angleIncrease: 3
+      angleDecay: 45
+      # fireRate inherits 0.8
       soundGunshot:
         path: /Audio/Weapons/Guns/Fire/rifle.ogg
     - type: BallisticAmmoProvider
@@ -448,6 +519,12 @@
     - type: STWeight
       self: 6
     - type: Gun
+      projectileSpeed: 48 # 7.65x53mm Mauser
+      minAngle: 4 # Older design
+      maxAngle: 60
+      angleIncrease: 20
+      angleDecay: 33
+      fireRate: 0.75 # Slightly slower bolt
       soundGunshot:
         path: /Audio/Weapons/Guns/Fire/Kar98k.ogg
     - type: BallisticAmmoProvider
@@ -470,7 +547,12 @@
       quickEquip: false
       slots:
         - Back
-    - type: Gun
+    - type: Gun # Assuming 7.65x53mm based on proto
+      projectileSpeed: 48
+      minAngle: 3
+      maxAngle: 60
+      angleIncrease: 19
+      angleDecay: 35
       soundGunshot:
         path: /Audio/Weapons/Guns/Fire/Kar98k.ogg
     - type: BallisticAmmoProvider
@@ -495,7 +577,13 @@
       quickEquip: false
       slots:
         - Back
-
+    - type: Gun # Overrides for 7.65x53mm Mauser (if different from Gewehr 71 parent)
+      # projectileSpeed: 48 (inherited)
+      # minAngle: 4 (inherited)
+      # maxAngle: 60 (inherited)
+      # angleIncrease: 20 (inherited)
+      # angleDecay: 33 (inherited)
+      # fireRate: 0.75 (inherited)
     - type: BallisticAmmoProvider
       capacity: 5
       proto: civ13_caliber_a765x53
@@ -518,7 +606,13 @@
       quickEquip: false
       slots:
         - Back
-
+    - type: Gun # 7x57mm Mauser
+      projectileSpeed: 49
+      minAngle: 3
+      maxAngle: 58 # Well-balanced
+      angleIncrease: 19
+      angleDecay: 36
+      fireRate: 0.8 # Standard Mauser bolt
     - type: BallisticAmmoProvider
       capacity: 5
       proto: civ13_caliber_a7x57
@@ -554,7 +648,13 @@
       quickEquip: false
       slots:
         - Back
-    - type: Gun
+    - type: Gun # 7.92x57mm Mauser
+      projectileSpeed: 50
+      minAngle: 3
+      maxAngle: 60
+      angleIncrease: 20
+      angleDecay: 35
+      fireRate: 0.85 # Smooth Mauser bolt
       soundGunshot:
         path: /Audio/Weapons/Guns/Fire/Kar98k.ogg
     - type: BallisticAmmoProvider
@@ -594,6 +694,10 @@
       quickEquip: false
       slots:
         - Back
+    - type: Gun # Kar98a - carbine version of G98
+      angleIncrease: 21 # Slightly snappier
+      angleDecay: 36 # Quicker handling
+      # Other stats inherited from Gewehr 98
 
 - type: entity
   name: Karabiner 98k
@@ -610,6 +714,10 @@
       quickEquip: false
       slots:
         - Back
+    - type: Gun # Kar98k - similar to Kar98a
+      angleIncrease: 21
+      angleDecay: 36
+      # Other stats inherited from Gewehr 98
 
 - type: entity
   name: Chiang Kai-Shek Rifle
@@ -626,6 +734,10 @@
       quickEquip: false
       slots:
         - Back
+    - type: Gun # Essentially a Kar98 variant
+      angleIncrease: 21
+      angleDecay: 36
+      # Other stats inherited from Gewehr 98
 
 - type: entity
   name: Volkssturmgewehr
@@ -640,7 +752,13 @@
       quickEquip: false
       slots:
         - Back
-    - type: Gun
+    - type: Gun # 7.92x33mm Kurz
+      projectileSpeed: 40 # Intermediate cartridge
+      minAngle: 5 # Crude rifle
+      maxAngle: 45 # Low recoil round
+      angleIncrease: 12
+      angleDecay: 40
+      fireRate: 0.9 # Lighter bolt
       soundGunshot:
         path: /Audio/Weapons/Guns/Fire/stg.ogg
     - type: BallisticAmmoProvider
@@ -665,7 +783,12 @@
       quickEquip: false
       slots:
         - Back
-    - type: Gun
+    - type: Gun # .303 British
+      projectileSpeed: 49
+      minAngle: 3
+      maxAngle: 62
+      angleIncrease: 21
+      angleDecay: 34
       soundGunshot:
         path: /Audio/Weapons/Guns/Fire/Kar98k.ogg
     - type: BallisticAmmoProvider
@@ -688,7 +811,13 @@
       quickEquip: false
       slots:
         - Back
-    - type: Gun
+    - type: Gun # 6.5x52mm Carcano
+      projectileSpeed: 47
+      minAngle: 4 # Mixed accuracy reputation
+      maxAngle: 55
+      angleIncrease: 18
+      angleDecay: 37
+      fireRate: 0.75
       soundGunshot:
         path: /Audio/Weapons/Guns/Fire/Kar98k.ogg
     - type: BallisticAmmoProvider
@@ -711,7 +840,13 @@
       quickEquip: false
       slots:
         - Back
-    - type: Gun
+    - type: Gun # 8x53mm Murata
+      projectileSpeed: 46 # Older round
+      minAngle: 5
+      maxAngle: 65
+      angleIncrease: 22
+      angleDecay: 30
+      fireRate: 0.7
       soundGunshot:
         path: /Audio/Weapons/Guns/Fire/Kar98k.ogg
     - type: BallisticAmmoProvider
@@ -734,7 +869,13 @@
       quickEquip: false
       slots:
         - Back
-    - type: Gun
+    - type: Gun # 7.62x54R, older bolt
+      projectileSpeed: 48
+      minAngle: 6
+      maxAngle: 70
+      angleIncrease: 25
+      angleDecay: 28
+      fireRate: 0.6 # Slower than Mosin
       soundGunshot:
         path: /Audio/Weapons/Guns/Fire/Kar98k.ogg
     - type: BallisticAmmoProvider
@@ -759,7 +900,13 @@
       quickEquip: false
       slots:
         - Back
-    - type: Gun
+    - type: Gun # .303 British, fast bolt
+      projectileSpeed: 49
+      minAngle: 3
+      maxAngle: 60
+      angleIncrease: 20
+      angleDecay: 36
+      fireRate: 0.9 # Known for fast bolt
       soundGunshot:
         path: /Audio/Weapons/Guns/Fire/Kar98k.ogg
     - type: BallisticAmmoProvider
@@ -784,7 +931,13 @@
       quickEquip: false
       slots:
         - Back
-    - type: Gun
+    - type: Gun # 8x50mmR Lebel
+      projectileSpeed: 48
+      minAngle: 4
+      maxAngle: 65
+      angleIncrease: 22
+      angleDecay: 32
+      fireRate: 0.7 # Older bolt, tube mag
       soundGunshot:
         path: /Audio/Weapons/Guns/Fire/Kar98k.ogg
     - type: BallisticAmmoProvider
@@ -807,7 +960,13 @@
       quickEquip: false
       slots:
         - Back
-    - type: Gun
+    - type: Gun # 8x50mmR Lebel, carbine
+      projectileSpeed: 47
+      minAngle: 4
+      maxAngle: 68 # Snappier recoil
+      angleIncrease: 23
+      angleDecay: 30
+      fireRate: 0.75 # Clip loading
       soundGunshot:
         path: /Audio/Weapons/Guns/Fire/Kar98k.ogg
     - type: BallisticAmmoProvider
@@ -843,7 +1002,13 @@
       quickEquip: false
       slots:
         - Back
-    - type: Gun
+    - type: Gun # 7.62x51mm NATO, modern sniper
+      projectileSpeed: 52
+      minAngle: 1 # Precision rifle
+      maxAngle: 50 # Good recoil management
+      angleIncrease: 18
+      angleDecay: 40
+      fireRate: 0.85 # Smooth modern bolt
       soundGunshot:
         path: /Audio/Weapons/Guns/Fire/Kar98k.ogg
     - type: BallisticAmmoProvider
@@ -868,7 +1033,12 @@
       quickEquip: false
       slots:
         - Back
-    - type: Gun
+    - type: Gun # .30-06 Springfield
+      projectileSpeed: 51
+      minAngle: 3
+      maxAngle: 65
+      angleIncrease: 22
+      angleDecay: 33
       soundGunshot:
         path: /Audio/Weapons/Guns/Fire/Kar98k.ogg
     - type: BallisticAmmoProvider

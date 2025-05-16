@@ -1,0 +1,693 @@
+- type: entity
+  name: BaseSMG
+  parent: BaseGunCiv
+  id: BaseGunCivSMG
+  suffix: SMG
+  description: A submachinegun.
+  abstract: true
+  components:
+    - type: Clothing
+      sprite: Civ14/Weapons/Guns/SMGs/atreides.rsi
+      quickEquip: true
+      slots:
+        - Back
+    - type: Item
+      size: Large
+      shape:
+        - 0,0,4,1
+    - type: Sprite
+      layers:
+        - state: icon
+          map: ["enum.GunVisualLayers.Base"]
+        - state: mag-0
+          map: ["enum.GunVisualLayers.Mag"]
+    - type: ItemSlots
+      slots:
+        gun_magazine:
+          name: Magazine
+          priority: 3
+          insertSound: /Audio/Weapons/Guns/MagIn/smg_magin.ogg
+          ejectSound: /Audio/Weapons/Guns/MagOut/smg_magout.ogg
+        gun_chamber:
+          name: Chamber
+          priority: 1
+          startingItem: civ13_caliber_a9x19
+          whitelist:
+            tags:
+              - civ13_caliber_a9x19
+    - type: ContainerContainer
+      containers:
+        gun_magazine: !type:ContainerSlot
+        gun_chamber: !type:ContainerSlot
+    - type: Wieldable
+    - type: GunWieldBonus
+      minAngle: -40
+      maxAngle: -40
+    - type: Gun
+      selectedMode: FullAuto
+      availableModes:
+        - FullAuto
+      soundGunshot:
+        path: /Audio/Weapons/Guns/Fire/PPSh.ogg
+    - type: ChamberMagazineAmmoProvider
+      boltClosed: true
+      soundRack:
+        path: /Audio/Weapons/Guns/Cock/smg_cock.ogg
+    - type: MagazineVisuals
+      magState: mag
+      steps: 1
+      zeroVisible: true
+
+- type: entity
+  name: MP 40
+  suffix: SMG
+  parent: BaseGunCivSMG
+  id: civ13_smg_mp40
+  description: Iconic German submachinegun with an underfolding stock, chambered in 9mm Luger.
+  components:
+    - type: STWeight
+      self: 4
+    - type: Item
+      sprite: Civ14/Weapons/Guns/mp40.rsi
+      size: Large
+      shape:
+        - 0,0,6,1
+    - type: Sprite
+      sprite: Civ14/Weapons/Guns/mp40.rsi
+    - type: Clothing
+      sprite: Civ14/Weapons/Guns/mp40.rsi
+      equipDelay: 1
+    - type: Gun
+      projectileSpeed: 18
+      minAngle: 52
+      maxAngle: 70
+      angleIncrease: 3.5
+      angleDecay: 17.5
+      fireRate: 4
+      soundGunshot:
+        path: /Audio/Weapons/Guns/Fire/mp40.ogg
+    - type: ItemSlots
+      slots:
+        gun_magazine:
+          name: Magazine
+          startingItem: civ13_magazine_mp40_(9x19mm)
+          whitelist:
+            tags:
+              - civ13_magazine_mp40_(9x19mm)
+        gun_chamber:
+          name: Chamber
+          startingItem: civ13_caliber_a9x19
+          priority: 1
+          whitelist:
+            tags:
+              - civ13_caliber_a9x19
+- type: entity
+  name: Blyskawica
+  parent: civ13_smg_mp40
+  id: civ13_smg_Blyskawica
+  description: Polish Underground State submachine gun, chambered in 9mm Luger.
+  components:
+    - type: Sprite
+      sprite: Civ14/Weapons/Guns/blyskawica.rsi
+
+    - type: Clothing
+      sprite: Civ14/Weapons/Guns/blyskawica.rsi
+- type: entity
+  name: PPD-40
+  parent: BaseGunCivSMG
+  id: civ13_smg_PPD_40
+  description: Early Soviet submachinegun. Chambered in 7.62x25mm Tokarev.
+  components:
+    - type: Sprite
+      sprite: Civ14/Weapons/Guns/ppd.rsi
+    - type: Clothing
+      sprite: Civ14/Weapons/Guns/ppd.rsi
+    - type: Gun
+      projectileSpeed: 18
+      minAngle: 55
+      maxAngle: 95
+      angleIncrease: 5
+      angleDecay: 20
+      fireRate: 6.0
+      soundGunshot:
+        path: /Audio/Weapons/Guns/Fire/762x25.ogg
+    - type: ItemSlots
+      slots:
+        gun_magazine:
+          name: Magazine
+          startingItem: civ13_magazine_PPS_43_magazine_(7.62x25mm)
+          priority: 2
+          whitelist:
+            tags:
+              - civ13_magazine_PPSh_41_drum_magazine_(7.62x25mm)
+              - civ13_magazine_PPS_43_magazine_(7.62x25mm)
+        gun_chamber:
+          name: Chamber
+          startingItem: civ13_caliber_a762x25
+          priority: 1
+          whitelist:
+            tags:
+              - civ13_caliber_a762x25
+
+- type: entity
+  name: PPSh-41
+  suffix: SMG
+  parent: BaseGunCivSMG
+  id: civ13_smg_ppsh
+  description: Soviet submachinegun typically equipped with drum magazines. Chambered in 7.62x25mm Tokarev.
+  components:
+    - type: STWeight
+      self: 4.5
+    - type: Item
+      sprite: Civ14/Weapons/Guns/ppsh.rsi
+      size: Large
+      shape:
+        - 0,0,6,1
+    - type: Sprite
+      sprite: Civ14/Weapons/Guns/ppsh.rsi
+    - type: Clothing
+      sprite: Civ14/Weapons/Guns/ppsh.rsi
+    - type: Gun
+      projectileSpeed: 18
+      minAngle: 65
+      maxAngle: 110
+      angleIncrease: 3
+      angleDecay: 10
+      fireRate: 5
+      soundGunshot:
+        path: /Audio/Weapons/Guns/Fire/PPSh.ogg
+    - type: ItemSlots
+      slots:
+        gun_magazine:
+          name: Magazine
+          startingItem: civ13_magazine_PPSh_41_drum_magazine_(7.62x25mm)
+          priority: 2
+          whitelist:
+            tags:
+              - civ13_magazine_PPSh_41_drum_magazine_(7.62x25mm)
+              - civ13_magazine_PPS_43_magazine_(7.62x25mm)
+        gun_chamber:
+          name: Chamber
+          startingItem: civ13_caliber_a762x25
+          priority: 1
+          whitelist:
+            tags:
+              - civ13_caliber_a762x25
+
+- type: entity
+  name: PPS-43
+  parent: BaseGunCivSMG
+  id: civ13_smg_PPS_43
+  description: A simplistic Soviet submachinegun. Chambered in 7.62x25mm Tokarev.
+  components:
+    - type: Sprite
+      sprite: Civ14/Weapons/Guns/pps.rsi
+
+    - type: Clothing
+      sprite: Civ14/Weapons/Guns/pps.rsi
+    - type: Gun
+      projectileSpeed: 18
+      minAngle: 50
+      maxAngle: 80
+      angleIncrease: 4
+      angleDecay: 22
+      fireRate: 5.0
+      soundGunshot:
+        path: /Audio/Weapons/Guns/Fire/762x25.ogg
+    - type: ItemSlots
+      slots:
+        gun_magazine:
+          name: Magazine
+          startingItem: civ13_magazine_PPS_43_magazine_(7.62x25mm)
+          priority: 2
+          whitelist:
+            tags:
+              - civ13_magazine_PPS_43_magazine_(7.62x25mm)
+        gun_chamber:
+          name: Chamber
+          startingItem: civ13_caliber_a762x25
+          priority: 1
+          whitelist:
+            tags:
+              - civ13_caliber_a762x25
+- type: entity
+  name: M3A1 SMG
+  parent: BaseGunCivSMG
+  id: civ13_smg_M3A1_SMG
+  description: A simplistic American submachinegun, chambered in .45 ACP.
+  components:
+    - type: Sprite
+      sprite: Civ14/Weapons/Guns/greasegun.rsi
+    - type: Clothing
+      sprite: Civ14/Weapons/Guns/greasegun.rsi
+    - type: Gun
+      projectileSpeed: 18
+      minAngle: 50
+      maxAngle: 80
+      angleIncrease: 4
+      angleDecay: 20
+      fireRate: 3.5
+      soundGunshot:
+        path: /Audio/Weapons/Guns/Fire/M3A1.ogg
+    - type: ItemSlots
+      slots:
+        gun_magazine:
+          name: Magazine
+          startingItem: civ13_magazine_M3A1_magazine_(.45_ACP)
+          priority: 2
+          whitelist:
+            tags:
+              - civ13_magazine_M3A1_magazine_(.45_ACP)
+        gun_chamber:
+          name: Chamber
+          startingItem: civ13_caliber_a45acp
+          priority: 1
+          whitelist:
+            tags:
+              - civ13_caliber_a45acp
+
+- type: entity
+  name: Thompson M1928
+  parent: BaseGunCivSMG
+  id: civ13_smg_Thompson_M1928
+  description: An American submachinegun, chambered in .45 ACP.
+  components:
+    - type: Sprite
+      sprite: Civ14/Weapons/Guns/tommygun.rsi
+    - type: Clothing
+      sprite: Civ14/Weapons/Guns/tommygun.rsi
+    - type: Gun
+      projectileSpeed: 18
+      minAngle: 55
+      maxAngle: 90
+      angleIncrease: 4.5
+      angleDecay: 19
+      fireRate: 5.0
+      soundGunshot:
+        path: /Audio/Weapons/Guns/Fire/thompson.ogg
+    - type: ItemSlots
+      slots:
+        gun_magazine:
+          name: Magazine
+          startingItem: civ13_magazine_Thompson_drum_magazine_(.45)
+          priority: 2
+          whitelist:
+            tags:
+              - civ13_magazine_Thompson_drum_magazine_(.45)
+        gun_chamber:
+          name: Chamber
+          startingItem: civ13_caliber_a45acp
+          priority: 1
+          whitelist:
+            tags:
+              - civ13_caliber_a45acp
+
+- type: entity
+  name: Thompson M1A1
+  parent: civ13_smg_Thompson_M1928
+  id: civ13_smg_Thompson_M1A1
+  description: An American submachinegun, chambered in .45 ACP.
+  components:
+    - type: Sprite
+      sprite: Civ14/Weapons/Guns/thompson.rsi
+    - type: Clothing
+      sprite: Civ14/Weapons/Guns/thompson.rsi
+    - type: Gun
+      fireRate: 4.8 # Slightly more controllable/slower than M1928
+      minAngle: 52
+      maxAngle: 85
+      angleIncrease: 4.2
+      angleDecay: 20
+      soundGunshot:
+        path: /Audio/Weapons/Guns/Fire/thompson.ogg
+    - type: ItemSlots
+      slots:
+        gun_magazine:
+          name: Magazine
+          startingItem: civ13_magazine_Thompson_magazine_(.45)
+          priority: 2
+          whitelist:
+            tags:
+              - civ13_magazine_Thompson_magazine_(.45)
+        gun_chamber:
+          name: Chamber
+          startingItem: civ13_caliber_a45acp
+          priority: 1
+          whitelist:
+            tags:
+              - civ13_caliber_a45acp
+
+- type: entity
+  name: Type-100
+  parent: BaseGunCivSMG
+  id: civ13_smg_Type_100
+  description: A Japanese submachinegun, chambered in 8x22mm Nambu.
+  components:
+    - type: Sprite
+      sprite: Civ14/Weapons/Guns/type100.rsi
+    - type: Clothing
+      sprite: Civ14/Weapons/Guns/type100.rsi
+    - type: Gun
+      projectileSpeed: 18
+      minAngle: 45 # 8mm Nambu is a weaker round
+      maxAngle: 65
+      angleIncrease: 3
+      angleDecay: 25
+      fireRate: 3.5 # Similar to M3A1 due to lower RPM
+      soundGunshot:
+        path: /Audio/Weapons/Guns/Fire/Type100.ogg
+    - type: ItemSlots
+      slots:
+        gun_magazine:
+          name: Magazine
+          startingItem: civ13_magazine_Type_100_Magazine
+          priority: 2
+          whitelist:
+            tags:
+              - civ13_magazine_Type_100_Magazine
+        gun_chamber:
+          name: Chamber
+          startingItem: civ13_caliber_c8mmnambu
+          priority: 1
+          whitelist:
+            tags:
+              - civ13_caliber_c8mmnambu
+- type: entity
+  name: Sten MK II
+  parent: BaseGunCivSMG
+  id: civ13_smg_Sten_MK_II
+  description: A British submachinegun, chambered in 9x19 Parabellum.
+  components:
+    - type: Sprite
+      sprite: Civ14/Weapons/Guns/sten2.rsi
+    - type: Clothing
+      sprite: Civ14/Weapons/Guns/sten2.rsi
+    - type: Gun
+      projectileSpeed: 18
+      minAngle: 50
+      maxAngle: 75 # Sten was a bit rough
+      angleIncrease: 3.8
+      angleDecay: 18
+      fireRate: 4.0 # Similar to MP40
+      soundGunshot:
+        path: /Audio/Weapons/Guns/Fire/mp40.ogg
+    - type: ItemSlots
+      slots:
+        gun_magazine:
+          name: Magazine
+          startingItem: civ13_magazine_Sten_Magazine_(9x19mm)
+          priority: 2
+          whitelist:
+            tags:
+              - civ13_magazine_Sten_Magazine_(9x19mm)
+        gun_chamber:
+          name: Chamber
+          startingItem: civ13_caliber_a9x19
+          priority: 1
+          whitelist:
+            tags:
+              - civ13_caliber_a9x19
+- type: entity
+  name: Sten MK V
+  parent: civ13_smg_Sten_MK_II
+  id: civ13_smg_Sten_MK_V
+  description: A British submachinegun, chambered in 9x19 Parabellum.
+  components:
+    - type: Sprite
+      sprite: Civ14/Weapons/Guns/sten2.rsi
+    - type: Clothing
+      sprite: Civ14/Weapons/Guns/sten2.rsi
+    - type: Gun # Overrides for better controllability than Mk II
+      minAngle: 48
+      maxAngle: 70
+      angleIncrease: 3.5
+      angleDecay: 20
+      # Inherits projectileSpeed, fireRate, and soundGunshot from Sten MK II
+
+- type: entity
+  name: P90
+  parent: BaseGunCivSMG
+  id: civ13_smg_P90
+  description: A compact, rapid-fire defensive weapon, chambered in 5.7x28mm.
+  components:
+    - type: Sprite
+      sprite: Civ14/Weapons/Guns/p90.rsi
+    - type: Clothing
+      sprite: Civ14/Weapons/Guns/p90.rsi
+    - type: Gun
+      selectedMode: FullAuto
+      availableModes:
+        - FullAuto
+        - SemiAuto
+      projectileSpeed: 24 # 5.7x28mm - high velocity for a PDW
+      fireRate: 6.0 # ~900 RPM
+      minAngle: 42 # Good control, bullpup
+      maxAngle: 75
+      angleIncrease: 3.2
+      angleDecay: 28 # Recovers well
+      soundGunshot:
+        path: /Audio/Weapons/Guns/Fire/PDW.ogg
+    - type: ItemSlots
+      slots:
+        gun_magazine:
+          name: Magazine
+          startingItem: civ13_magazine_P90_magazine_(50)
+          priority: 2
+          whitelist:
+            tags:
+              - civ13_magazine_P90_magazine_(50)
+        gun_chamber:
+          name: Chamber
+          startingItem: civ13_caliber_a57x28
+          priority: 1
+          whitelist:
+            tags:
+              - civ13_caliber_a57x28
+- type: entity
+  name: Kriss Vector
+  parent: BaseGunCivSMG
+  id: civ13_smg_Kriss_Vector
+  description: >-
+    A compact gun using an unconventional delayed blowback system combined with
+    in-line design to reduce perceived recoil and muzzle climb. It's chambered
+    in 9mm
+  components:
+    - type: Sprite
+      sprite: Civ14/Weapons/Guns/victor.rsi
+    - type: Clothing
+      sprite: Civ14/Weapons/Guns/victor.rsi
+    - type: Gun
+      projectileSpeed: 19 # 9mm
+      fireRate: 7.0 # ~1200 RPM - very fast
+      minAngle: 38 # Kriss Super V system - very low recoil
+      maxAngle: 65
+      angleIncrease: 2.8 # Minimal climb
+      angleDecay: 32 # Excellent recovery
+      soundGunshot:
+        path: /Audio/Weapons/Guns/Fire/pistol.ogg
+    - type: ItemSlots
+      slots:
+        gun_magazine:
+          name: Magazine
+          startingItem: civ13_magazine_Kriss_Vector_(9x19mm)
+          priority: 2
+          whitelist:
+            tags:
+              - civ13_magazine_Kriss_Vector_(9x19mm)
+        gun_chamber:
+          name: Chamber
+          startingItem: civ13_caliber_a9x19
+          priority: 1
+          whitelist:
+            tags:
+              - civ13_caliber_a9x19
+- type: entity
+  name: Uzi
+  parent: BaseGunCivSMG
+  id: civ13_smg_Uzi
+  description: An Israeli submachinegun chambered in 9mm Parabellum.
+  components:
+    - type: Sprite
+      sprite: Civ14/Weapons/Guns/uzi.rsi
+
+    - type: Clothing
+      sprite: Civ14/Weapons/Guns/uzi.rsi
+    - type: Gun
+      projectileSpeed: 18 # 9mm
+      fireRate: 4.0 # ~600 RPM
+      minAngle: 50 # Standard SMG kick
+      maxAngle: 80
+      angleIncrease: 4.0 # Heavier, open bolt feel
+      angleDecay: 20
+      soundGunshot:
+        path: /Audio/Weapons/Guns/Fire/9mm.ogg
+    - type: ItemSlots
+      slots:
+        gun_magazine:
+          name: Magazine
+          startingItem: civ13_magazine_Uzi_magazine_(9x19mm_Parabellum)
+          priority: 2
+          whitelist:
+            tags:
+              - civ13_magazine_Uzi_magazine_(9x19mm_Parabellum)
+        gun_chamber:
+          name: Chamber
+          startingItem: civ13_caliber_a9x19
+          priority: 1
+          whitelist:
+            tags:
+              - civ13_caliber_a9x19
+- type: entity
+  name: MAC-10
+  parent: BaseGunCivSMG
+  id: civ13_smg_MAC_10
+  description: >-
+    An American compact blowback operated submachinegun chambered in .45 ACP.
+  components:
+    - type: Sprite
+      sprite: Civ14/Weapons/Guns/mac10.rsi
+
+    - type: Clothing
+      sprite: Civ14/Weapons/Guns/mac10.rsi
+    - type: Gun
+      projectileSpeed: 18 # .45 ACP
+      fireRate: 6.8 # ~1100 RPM - bullet hose
+      minAngle: 60 # Hard to control
+      maxAngle: 115 # Wide spread
+      angleIncrease: 6.5 # Climbs fast
+      angleDecay: 16 # Slow to recover
+      soundGunshot:
+        path: /Audio/Weapons/Guns/Fire/45ACP.ogg
+    - type: ItemSlots
+      slots:
+        gun_magazine:
+          name: Magazine
+          startingItem: civ13_magazine_MAC_10_magazine_(.45_ACP)
+          priority: 2
+          whitelist:
+            tags:
+              - civ13_magazine_MAC_10_magazine_(.45_ACP)
+        gun_chamber:
+          name: Chamber
+          startingItem: civ13_caliber_a45acp
+          priority: 1
+          whitelist:
+            tags:
+              - civ13_caliber_a45acp
+- type: entity
+  name: TEC-9
+  parent: BaseGunCivSMG
+  id: civ13_smg_TEC_9
+  description: A blowback-operated semi-automatic pistol.
+  components:
+    - type: Sprite
+      sprite: Civ14/Weapons/Guns/tec-9.rsi
+    - type: Clothing
+      sprite: Civ14/Weapons/Guns/tec-9.rsi
+    - type: Gun
+      selectedMode: SemiAuto
+      availableModes:
+        - SemiAuto
+      projectileSpeed: 19 # 9mm
+      fireRate: 5.5 # ~750-800 RPM
+      minAngle: 55 # Can be jumpy
+      maxAngle: 95
+      angleIncrease: 5.0
+      angleDecay: 19
+      soundGunshot:
+        path: /Audio/Weapons/Guns/Fire/tec9.ogg
+    - type: ItemSlots
+      slots:
+        gun_magazine:
+          name: Magazine
+          startingItem: civ13_magazine_TEC_9_(9x19mm_Parabellum)
+          priority: 2
+          whitelist:
+            tags:
+              - civ13_magazine_TEC_9_(9x19mm_Parabellum)
+        gun_chamber:
+          name: Chamber
+          startingItem: civ13_caliber_a9x19
+          priority: 1
+          whitelist:
+            tags:
+              - civ13_caliber_a9x19
+- type: entity
+  name: Skorpion
+  parent: BaseGunCivSMG
+  id: civ13_smg_Skorpion
+  description: An Czechoslovak machinepistol chambered in 9mm Parabellum.
+  components:
+    - type: Sprite
+      sprite: Civ14/Weapons/Guns/skorpion.rsi
+    - type: Clothing
+      sprite: Civ14/Weapons/Guns/skorpion.rsi
+    - type: Gun
+      selectedMode: FullAuto
+      availableModes:
+        - FullAuto
+        - SemiAuto
+      projectileSpeed: 19 # 9mm Parabellum
+      fireRate: 5.8 # ~850 RPM
+      minAngle: 52 # Machine pistol, a bit wild
+      maxAngle: 100
+      angleIncrease: 5.2
+      angleDecay: 20
+      soundGunshot:
+        path: /Audio/Weapons/Guns/Fire/9mm.ogg
+    - type: ItemSlots
+      slots:
+        gun_magazine:
+          name: Magazine
+          startingItem: civ13_magazine_Skorpion_magazine_(9x19mm_Parabellum)
+          priority: 2
+          whitelist:
+            tags:
+              - civ13_magazine_Skorpion_magazine_(9x19mm_Parabellum)
+        gun_chamber:
+          name: Chamber
+          startingItem: civ13_caliber_a9x19
+          priority: 1
+          whitelist:
+            tags:
+              - civ13_caliber_a9x19
+
+- type: entity
+  name: "H&K MP5"
+  parent: BaseGunCivSMG
+  id: civ13_smg_HK_MP5
+  description: German submachinegun chambered in 9mm Parabellum.
+  components:
+    - type: Sprite
+      sprite: Civ14/Weapons/Guns/mp5.rsi
+    - type: Clothing
+      sprite: Civ14/Weapons/Guns/mp5.rsi
+    - type: Gun
+      selectedMode: FullAuto
+      availableModes:
+        - FullAuto
+        - SemiAuto
+      projectileSpeed: 20 # 9mm - high quality
+      fireRate: 5.6 # ~800 RPM
+      minAngle: 40 # Very controllable for an SMG
+      maxAngle: 70 # Tight grouping
+      angleIncrease: 3.0 # Low climb
+      angleDecay: 30 # Excellent recovery
+      soundGunshot:
+        path: /Audio/Weapons/Guns/Fire/MP5.ogg
+    - type: ItemSlots
+      slots:
+        gun_magazine:
+          name: Magazine
+          startingItem: civ13_magazine_MP5_magazine_(9x19mm)
+          priority: 2
+          whitelist:
+            tags:
+              - civ13_magazine_MP5_magazine_(9x19mm)
+        gun_chamber:
+          name: Chamber
+          startingItem: civ13_caliber_a9x19
+          priority: 1
+          whitelist:
+            tags:
+              - civ13_caliber_a9x19

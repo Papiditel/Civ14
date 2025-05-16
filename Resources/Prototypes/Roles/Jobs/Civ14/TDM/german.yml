@@ -9,7 +9,7 @@
     - !type:OverallPlaytimeRequirement
       time: 10800 #3 hrs
   startingGear: GermanCaptainGear
-  icon: "JobIconCommander"
+  icon: "JobIconICpt"
   supervisors: job-supervisors-nobody
   special:
     - !type:AddComponentSpecial
@@ -27,7 +27,7 @@
 - type: startingGear
   id: GermanCaptainGear
   equipment:
-    shoes: civ13_shoes_Soviet_sapogi_boots
+    shoes: civ13_shoes_jackboots
     jumpsuit: civ13_uniform_German_officer_uniform
     outerClothing: civ13_suit_German_officer_coat
     gloves: civ13_gloves_Officer_gloves
@@ -47,7 +47,7 @@
     - !type:OverallPlaytimeRequirement
       time: 5400 #1.5 hrs
   startingGear: GermanSergeantGear
-  icon: "JobIconOfficer"
+  icon: "JobIconISgt"
   supervisors: job-supervisors-cpt
   special:
     - !type:AddComponentSpecial
@@ -65,7 +65,7 @@
 - type: startingGear
   id: GermanSergeantGear
   equipment:
-    shoes: civ13_shoes_Soviet_sapogi_boots
+    shoes: civ13_shoes_jackboots
     jumpsuit: civ13_uniform_German_SS_officer_uniform
     outerClothing: civ13_suit_German_parka
     head: civ13_head_German_field_cap
@@ -85,7 +85,7 @@
   playTimeTracker: JobGermanSubmachineGunner
   startingGear: GermanSubmachineGunnerGear
   randomStartingGears: [GermanSubmachineGunnerGear, GermanSubmachineGunnerGear2]
-  icon: "JobIconSword"
+  icon: "JobIconICpl"
   supervisors: job-supervisors-cpt
   special:
     - !type:AddComponentSpecial
@@ -103,19 +103,26 @@
 - type: startingGear
   id: GermanSubmachineGunnerGear
   equipment:
-    shoes: civ13_shoes_Soviet_sapogi_boots
+    shoes: civ13_shoes_jackboots
     jumpsuit: civ13_uniform_German_SS_uniform
     head: civ13_head_german_stahlhelm
-  #inhand:
-    #- civ13_german_smg
+    belt: ClothingWebbingGermanSMG
+    pocket1: Gauze
+    pocket2: Gauze
+
+  inhand:
+    - civ13_smg_mp40
 - type: startingGear
   id: GermanSubmachineGunnerGear2
   equipment:
-    shoes: civ13_shoes_Soviet_sapogi_boots
+    shoes: civ13_shoes_jackboots
     jumpsuit: civ13_uniform_German_camo_SS_uniform
     head: civ13_head_German_SS_helmet
-# inhand:
-  # - civ13_german_smg
+    belt: ClothingWebbingGermanSMG
+    pocket1: Gauze
+    pocket2: Gauze
+  inhand:
+    - civ13_smg_mp40
 
 # Rifleman
 
@@ -128,7 +135,7 @@
   playTimeTracker: JobGermanRifleman
   startingGear: GermanRiflemanGear
   randomStartingGears: [GermanRiflemanGear, GermanRiflemanGear2]
-  icon: "JobIconSpear"
+  icon: "JobIconICpl"
   supervisors: job-supervisors-cpt
   special:
     - !type:AddComponentSpecial
@@ -146,32 +153,39 @@
 - type: startingGear
   id: GermanRiflemanGear
   equipment:
-    shoes: civ13_shoes_Soviet_sapogi_boots
+    shoes: civ13_shoes_jackboots
     jumpsuit: civ13_uniform_German_SS_uniform
     head: civ13_head_german_stahlhelm
-# inhand:
-  #  - civ13_boltaction_Gewehr_71
+    belt: ClothingWebbingGermanRifleman
+    pocket1: Gauze
+    pocket2: Gauze
+  inhand:
+    - civ13_boltaction_Karabiner_98k
+
 - type: startingGear
   id: GermanRiflemanGear2
   equipment:
-    shoes: civ13_shoes_Soviet_sapogi_boots
+    shoes: civ13_shoes_jackboots
     jumpsuit: civ13_uniform_German_camo_SS_uniform
     head: civ13_head_German_SS_helmet
-# inhand:
-  #  - civ13_boltaction_Gewehr_71
+    belt: ClothingWebbingGermanRifleman
+    pocket1: Gauze
+    pocket2: Gauze
+  inhand:
+    - civ13_boltaction_Karabiner_98k
 
 # Machinegunner
 
 - type: job
-  id: GermanMachinegunner 
-  name: job-name-civ-german-machinegunner 
+  id: GermanMachinegunner
+  name: job-name-civ-german-machinegunner
   faction: Germany
   originalName: Maschinengewehrschütze # how to pronounce that
   description: job-description-civ-german-machinegunner
   playTimeTracker: JobGermanMachinegunner
   startingGear: GermanMachinegunnerGear
   randomStartingGears: [GermanMachinegunnerGear, GermanMachinegunnerGear2]
-  icon: "JobIconRanged"
+  icon: "JobIconMg"
   supervisors: job-supervisors-cpt
   special:
     - !type:AddComponentSpecial
@@ -189,21 +203,26 @@
 - type: startingGear
   id: GermanMachinegunnerGear
   equipment:
-    shoes: civ13_shoes_Soviet_sapogi_boots
+    shoes: civ13_shoes_jackboots
     jumpsuit: civ13_uniform_German_SS_uniform
     head: civ13_head_german_stahlhelm
+    belt: ClothingWebbingGermanMG
     pocket1: CombatKnife
-# inhand:
- # - civ13_generic_german_machinegun
+    pocket2: Gauze
+  inhand:
+    - civ13_mg_MG34
+
 - type: startingGear
   id: GermanMachinegunnerGear2
   equipment:
-    shoes: civ13_shoes_Soviet_sapogi_boots
+    shoes: civ13_shoes_jackboots
     jumpsuit: civ13_uniform_German_camo_SS_uniform
     head: civ13_head_German_SS_helmet
+    belt: ClothingWebbingGermanMG
     pocket1: CombatKnife
-# inhand:
-   # - civ13_generic_german_machinegun
+    pocket2: Gauze
+  inhand:
+    - civ13_mg_MG34
 
 # Medic
 
@@ -233,13 +252,13 @@
 - type: startingGear
   id: GermanMedicGear
   equipment:
-    shoes: civ13_shoes_Soviet_sapogi_boots
+    shoes: civ13_shoes_jackboots
     jumpsuit: civ13_uniform_German_doctor_uniform
     head: civ13_head_german_medic_stahlhelm
     belt: LeatherClothingBelt
     pocket1: CombatKnife
-  # inhand: 
-    # - civ13_boltaction_Gewehr_71
+  inhand:
+    - civ13_boltaction_Karabiner_98k
   storage:
     belt:
       - DoctorsHandbook

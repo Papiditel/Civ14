@@ -1,0 +1,262 @@
+- type: entity
+  name: AR-10
+  parent: BaseGunCivAR
+  id: civ13_ar_AR_10
+  description: An ArmaLite battle rifle, chambered in 7.62x51mm.
+  components:
+    - type: Sprite
+      sprite: Civ14/Weapons/Guns/ar10.rsi
+    - type: Clothing
+      sprite: Civ14/Weapons/Guns/ar10.rsi
+    - type: Gun
+      projectileSpeed: 32 # 7.62x51mm NATO
+      fireRate: 4.8 # ~700 RPM
+      minAngle: 58 # Significant recoil
+      maxAngle: 140
+      angleIncrease: 7.5
+      angleDecay: 22 # Slower recovery
+      soundGunshot:
+        path: /Audio/Weapons/Guns/Fire/battle_rifle.ogg
+    - type: ItemSlots
+      slots:
+        gun_magazine:
+          name: Magazine
+          startingItem: civ13_magazine_AR_10_magazine_(7.62x51mm)
+          priority: 2
+          whitelist:
+            tags:
+              - civ13_magazine_AR_10_magazine_(7.62x51mm)
+        gun_chamber:
+          name: Chamber
+          startingItem: civ13_caliber_a762x51
+          priority: 1
+          whitelist:
+            tags:
+              - civ13_caliber_a762x51
+- type: entity
+  name: AR-15
+  parent: BaseGunCivAR
+  id: civ13_ar_AR_15
+  description: >-
+    A civilian market version of ArmaLite's AR-15, single-fire only. Has
+    railings for several attachments.
+  components:
+    - type: Sprite
+      sprite: Civ14/Weapons/Guns/ar15.rsi
+    - type: Clothing
+      sprite: Civ14/Weapons/Guns/ar15.rsi
+    - type: Gun
+      projectileSpeed: 30 # 5.56x45mm
+      fireRate: 5.5 # Represents fast cycling for semi-auto
+      minAngle: 40 # Low recoil
+      maxAngle: 80
+      angleIncrease: 3.0
+      angleDecay: 35 # Quick recovery
+      soundGunshot:
+        path: /Audio/Weapons/Guns/Fire/M4A1.ogg
+      selectedMode: SemiAuto
+      availableModes:
+        - SemiAuto
+    - type: ItemSlots
+      slots:
+        gun_magazine:
+          name: Magazine
+          startingItem: civ13_magazine_AR15_magazine_(5.56x45mm)
+          priority: 2
+          whitelist:
+            tags:
+              - civ13_magazine_AR15_magazine_(5.56x45mm)
+              - civ13_magazine_STANAG_magazine_(5.56x45mm)
+        gun_chamber:
+          name: Chamber
+          startingItem: civ13_caliber_a556x45
+          priority: 1
+          whitelist:
+            tags:
+              - civ13_caliber_a556x45
+
+- type: entity
+  name: M16A1
+  parent: BaseGunCivAR
+  id: civ13_ar_M16A1
+  description: An American assault rifle, chambered in 5.56x45mm.
+  components:
+    - type: Sprite
+      sprite: Civ14/Weapons/Guns/m16.rsi
+    - type: Clothing
+      sprite: Civ14/Weapons/Guns/m16.rsi
+    - type: Gun
+      projectileSpeed: 30 # 5.56x45mm
+      fireRate: 5.8 # ~750-900 RPM
+      minAngle: 42 # Good control, long rifle
+      maxAngle: 85
+      angleIncrease: 3.2
+      angleDecay: 33
+      soundGunshot:
+        path: /Audio/Weapons/Guns/Fire/M4A1.ogg
+    - type: ItemSlots
+      slots:
+        gun_magazine:
+          name: Magazine
+          startingItem: civ13_magazine_STANAG_magazine_(5.56x45mm)
+          priority: 2
+          whitelist:
+            tags:
+              - civ13_magazine_STANAG_magazine_(5.56x45mm)
+              - civ13_magazine_AR15_magazine_(5.56x45mm)
+        gun_chamber:
+          name: Chamber
+          startingItem: civ13_caliber_a556x45
+          priority: 1
+          whitelist:
+            tags:
+              - civ13_caliber_a556x45
+
+- type: entity
+  name: M16A2
+  parent: civ13_ar_M16A1
+  id: civ13_ar_M16A2
+  description: A modernized version of the M16, with burst fire instead of automatic.
+  components:
+    - type: Sprite
+      sprite: Civ14/Weapons/Guns/m16.rsi
+    - type: Clothing
+      sprite: Civ14/Weapons/Guns/m16.rsi
+    - type: Gun
+      soundGunshot:
+        path: /Audio/Weapons/Guns/Fire/M4A1.ogg
+      selectedMode: SemiAuto
+      availableModes:
+        - SemiAuto
+        - Burst
+
+- type: entity
+  name: M16A4
+  parent: civ13_ar_M16A1
+  id: civ13_ar_M16A4
+  description: A modernized version of the M16, with a railed upper receiver and handguard.
+  components:
+    - type: Sprite
+      sprite: Civ14/Weapons/Guns/m16a4.rsi
+    - type: Clothing
+      sprite: Civ14/Weapons/Guns/m16a4.rsi
+    - type: Gun
+      soundGunshot:
+        path: /Audio/Weapons/Guns/Fire/M4A1.ogg
+      selectedMode: SemiAuto
+      availableModes:
+        - SemiAuto
+        - Burst
+# M4s
+
+- type: entity
+  name: XM177E2
+  parent: civ13_ar_M16A1
+  id: civ13_ar_XM177E2
+  description: A carbine version of the AR-15/M16, chambered in 5.56x45mm.
+  components:
+    - type: Sprite
+      sprite: Civ14/Weapons/Guns/m4.rsi
+    - type: Clothing
+      quickEquip: true
+      sprite: Civ14/Weapons/Guns/m4.rsi
+    # Merged and updated Gun component for XM177E2
+    - type: Gun
+      projectileSpeed: 29 # 5.56mm carbine, shorter barrel
+      fireRate: 6.0 # ~750-950 RPM, can be lively
+      minAngle: 45 # More jumpy than M16
+      maxAngle: 95
+      angleIncrease: 4.0
+      angleDecay: 30
+      soundGunshot:
+        path: /Audio/Weapons/Guns/Fire/M4A1.ogg
+      selectedMode: SemiAuto
+      availableModes:
+        - SemiAuto
+        - Burst
+        - FullAuto
+- type: entity
+  name: M4 Carbine
+  parent: civ13_ar_XM177E2
+  id: civ13_ar_M4_Carbine
+  components:
+    - type: Sprite
+      sprite: Civ14/Weapons/Guns/m4.rsi
+    - type: Clothing
+      quickEquip: true
+      sprite: Civ14/Weapons/Guns/m4.rsi
+    - type: Gun
+      projectileSpeed: 29 # 5.56mm carbine
+      fireRate: 5.9 # ~700-900 RPM, slightly more refined than XM177E2
+      minAngle: 44 # Good control for a carbine
+      maxAngle: 90
+      angleIncrease: 3.8
+      angleDecay: 31
+      soundGunshot:
+        path: /Audio/Weapons/Guns/Fire/M4A1.ogg
+      selectedMode: SemiAuto
+      availableModes:
+        - SemiAuto
+        - FullAuto
+
+- type: entity
+  name: M4 MWS
+  parent: civ13_ar_M4_Carbine
+  id: civ13_ar_M4_MWS
+  description: A version of the M4 carbine made to fit the Modular Weapon System.
+  components:
+    - type: Sprite
+      sprite: Civ14/Weapons/Guns/m4mws.rsi
+    - type: Clothing
+      quickEquip: true
+      sprite: Civ14/Weapons/Guns/m4mws.rsi
+
+- type: entity
+  name: C7
+  parent: civ13_ar_M16A1
+  id: civ13_ar_C7
+  description: A Canadian Colt C7 assault rifle, chambered in 5.56x45mm.
+  components:
+    - type: Sprite
+      sprite: Civ14/Weapons/Guns/c7.rsi
+    - type: Clothing
+      sprite: Civ14/Weapons/Guns/c7.rsi
+    - type: Gun
+      soundGunshot:
+        path: /Audio/Weapons/Guns/Fire/M4A1.ogg
+      selectedMode: SemiAuto
+      availableModes:
+        - SemiAuto
+        - FullAuto
+
+- type: entity
+  name: C8
+  parent: civ13_ar_M4_Carbine
+  id: civ13_ar_C8
+  description: A Canadian Colt C8 assault rifle, chambered in 5.56x45mm.
+  components:
+    - type: Sprite
+      sprite: Civ14/Weapons/Guns/c8.rsi
+    - type: Clothing
+      quickEquip: true
+      sprite: Civ14/Weapons/Guns/c8.rsi
+    - type: Gun
+      soundGunshot:
+        path: /Audio/Weapons/Guns/Fire/M4A1.ogg
+      selectedMode: SemiAuto
+      availableModes:
+        - SemiAuto
+        - FullAuto
+
+- type: entity
+  name: Service Rifle
+  parent: civ13_ar_M16A1
+  id: civ13_ar_Service_Rifle
+  description: >-
+    A pre-war rifle design employed as the standard arm of the New California
+    Republic.
+  components:
+    - type: Sprite
+      sprite: Civ14/Weapons/Guns/service_rifle.rsi
+    - type: Clothing
+      sprite: Civ14/Weapons/Guns/service_rifle.rsi

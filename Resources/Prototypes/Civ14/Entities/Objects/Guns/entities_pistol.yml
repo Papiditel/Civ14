@@ -21,6 +21,11 @@
         - suitStorage
         - Belt
     - type: Gun
+      projectileSpeed: 20
+      minAngle: 5
+      maxAngle: 50
+      angleIncrease: 5
+      angleDecay: 25
       fireRate: 3
       selectedMode: SemiAuto
       availableModes:
@@ -62,19 +67,20 @@
   components:
     - type: Sprite
       sprite: Civ14/Weapons/Guns/nambu_ww2.rsi
-
     - type: Clothing
       sprite: Civ14/Weapons/Guns/nambu_ww2.rsi
-      quickEquip: false
-
     - type: Gun
-      fireRate: 3
+      projectileSpeed: 18 # 8mm Nambu is weaker
+      minAngle: 4
+      maxAngle: 45
+      angleIncrease: 4.2
+      angleDecay: 28
+      fireRate: 3 # Already present
       selectedMode: SemiAuto
       availableModes:
         - SemiAuto
       soundGunshot:
         path: /Audio/Weapons/Guns/Fire/Nambu.ogg
-
     - type: ItemSlots
       slots:
         gun_magazine:
@@ -101,19 +107,20 @@
   components:
     - type: Sprite
       sprite: Civ14/Weapons/Guns/luger.rsi
-
     - type: Clothing
       sprite: Civ14/Weapons/Guns/luger.rsi
-      quickEquip: false
-
     - type: Gun
-      fireRate: 3
+      projectileSpeed: 20 # 9mm
+      minAngle: 6 # Older design, slightly more kick
+      maxAngle: 52
+      angleIncrease: 5.5
+      angleDecay: 24
+      fireRate: 3 # Already present
       selectedMode: SemiAuto
       availableModes:
         - SemiAuto
       soundGunshot:
         path: /Audio/Weapons/Guns/Fire/9mm.ogg
-
     - type: ItemSlots
       slots:
         gun_magazine:
@@ -140,19 +147,20 @@
   components:
     - type: Sprite
       sprite: Civ14/Weapons/Guns/waltherp38.rsi
-
     - type: Clothing
       sprite: Civ14/Weapons/Guns/waltherp38.rsi
-      quickEquip: false
-
     - type: Gun
-      fireRate: 3
+      projectileSpeed: 20 # 9mm
+      minAngle: 5
+      maxAngle: 50
+      angleIncrease: 5.2 # Solid, but older than Glock
+      angleDecay: 25
+      fireRate: 3 # Already present
       selectedMode: SemiAuto
       availableModes:
         - SemiAuto
       soundGunshot:
         path: /Audio/Weapons/Guns/Fire/9mm.ogg
-
     - type: ItemSlots
       slots:
         gun_magazine:
@@ -179,19 +187,20 @@
   components:
     - type: Sprite
       sprite: Civ14/Weapons/Guns/glock17.rsi
-
     - type: Clothing
       sprite: Civ14/Weapons/Guns/glock17.rsi
-      quickEquip: false
-
     - type: Gun
-      fireRate: 4
-      selectedMode: SemiAuto
+      projectileSpeed: 20
+      minAngle: 5
+      maxAngle: 50
+      angleIncrease: 5
+      angleDecay: 25 # Base Glock 17 stats
+      fireRate: 3
       availableModes:
         - SemiAuto
+      selectedMode: SemiAuto
       soundGunshot:
         path: /Audio/Weapons/Guns/Fire/9mm.ogg
-
     - type: ItemSlots
       slots:
         gun_magazine:
@@ -218,19 +227,20 @@
   components:
     - type: Sprite
       sprite: Civ14/Weapons/Guns/sig250.rsi
-
     - type: Clothing
       sprite: Civ14/Weapons/Guns/sig250.rsi
-      quickEquip: false
-
     - type: Gun
-      fireRate: 4
+      projectileSpeed: 20 # 9mm
+      minAngle: 5
+      maxAngle: 48 # Modern, good control
+      angleIncrease: 4.8
+      angleDecay: 26
+      fireRate: 4 # Already present
       selectedMode: SemiAuto
       availableModes:
         - SemiAuto
       soundGunshot:
         path: /Audio/Weapons/Guns/Fire/pistol.ogg
-
     - type: ItemSlots
       slots:
         gun_magazine:
@@ -257,19 +267,20 @@
   components:
     - type: Sprite
       sprite: Civ14/Weapons/Guns/pl14.rsi
-
     - type: Clothing
       sprite: Civ14/Weapons/Guns/pl14.rsi
-      quickEquip: false
-
     - type: Gun
-      fireRate: 6
+      projectileSpeed: 20 # 9mm
+      minAngle: 4 # Experimental, very good control
+      maxAngle: 40
+      angleIncrease: 3.5
+      angleDecay: 30
+      fireRate: 6 # Already present
       selectedMode: SemiAuto
       availableModes:
         - SemiAuto
       soundGunshot:
         path: /Audio/Weapons/Guns/Fire/pistol.ogg
-
     - type: ItemSlots
       slots:
         gun_magazine:
@@ -296,19 +307,20 @@
   components:
     - type: Sprite
       sprite: Civ14/Weapons/Guns/mp443.rsi
-
     - type: Clothing
       sprite: Civ14/Weapons/Guns/mp443.rsi
-      quickEquip: false
-
     - type: Gun
-      fireRate: 3
+      projectileSpeed: 20 # 9mm
+      minAngle: 5 # Standard modern 9mm
+      maxAngle: 50
+      angleIncrease: 5
+      angleDecay: 25
+      fireRate: 3 # Already present
       selectedMode: SemiAuto
       availableModes:
         - SemiAuto
       soundGunshot:
         path: /Audio/Weapons/Guns/Fire/pistol.ogg
-
     - type: ItemSlots
       slots:
         gun_magazine:
@@ -335,19 +347,20 @@
   components:
     - type: Sprite
       sprite: Civ14/Weapons/Guns/tarusg3.rsi
-
     - type: Clothing
       sprite: Civ14/Weapons/Guns/tarusg3.rsi
-      quickEquip: false
-
     - type: Gun
-      fireRate: 4
+      projectileSpeed: 20 # 9mm
+      minAngle: 5
+      maxAngle: 48 # Modern, good control
+      angleIncrease: 4.8
+      angleDecay: 26
+      fireRate: 4 # Already present
       selectedMode: SemiAuto
       availableModes:
         - SemiAuto
       soundGunshot:
         path: /Audio/Weapons/Guns/Fire/pistol.ogg
-
     - type: ItemSlots
       slots:
         gun_magazine:
@@ -374,19 +387,20 @@
   components:
     - type: Sprite
       sprite: Civ14/Weapons/Guns/p220.rsi
-
     - type: Clothing
       sprite: Civ14/Weapons/Guns/p220.rsi
-      quickEquip: false
-
     - type: Gun
-      fireRate: 3
+      projectileSpeed: 18 # .45 ACP - slower, heavier
+      minAngle: 8 # More kick
+      maxAngle: 60
+      angleIncrease: 7
+      angleDecay: 20
+      fireRate: 3 # Already present
       selectedMode: SemiAuto
       availableModes:
         - SemiAuto
       soundGunshot:
         path: /Audio/Weapons/Guns/Fire/45ACP.ogg
-
     - type: ItemSlots
       slots:
         gun_magazine:
@@ -413,19 +427,20 @@
   components:
     - type: Sprite
       sprite: Civ14/Weapons/Guns/iogb7.rsi
-
     - type: Clothing
       sprite: Civ14/Weapons/Guns/iogb7.rsi
-      quickEquip: false
-
     - type: Gun
-      fireRate: 9
+      projectileSpeed: 20 # 9mm
+      minAngle: 10 # "Fake shit" - very high RoF, wild recoil
+      maxAngle: 70
+      angleIncrease: 8
+      angleDecay: 22
+      fireRate: 9 # Already present
       selectedMode: SemiAuto
       availableModes:
         - SemiAuto
       soundGunshot:
         path: /Audio/Weapons/Guns/Fire/pistol.ogg
-
     - type: ItemSlots
       slots:
         gun_magazine:
@@ -452,19 +467,20 @@
   components:
     - type: Sprite
       sprite: Civ14/Weapons/Guns/mauser.rsi
-
     - type: Clothing
       sprite: Civ14/Weapons/Guns/mauser.rsi
-      quickEquip: false
-
     - type: Gun
-      fireRate: 3
+      projectileSpeed: 22 # 7.62x25mm - fast round
+      minAngle: 7
+      maxAngle: 55 # Noticeable kick, old design
+      angleIncrease: 6
+      angleDecay: 23
+      fireRate: 3 # Already present
       selectedMode: SemiAuto
       availableModes:
         - SemiAuto
       soundGunshot:
         path: /Audio/Weapons/Guns/Fire/762x25.ogg
-
     - type: ItemSlots
       slots:
         gun_magazine:
@@ -491,19 +507,20 @@
   components:
     - type: Sprite
       sprite: Civ14/Weapons/Guns/borchardt.rsi
-
     - type: Clothing
       sprite: Civ14/Weapons/Guns/borchardt.rsi
-      quickEquip: false
-
     - type: Gun
-      fireRate: 3
+      projectileSpeed: 19 # 7.65x25mm Borchardt - less powerful than Mauser
+      minAngle: 6
+      maxAngle: 50
+      angleIncrease: 5.5
+      angleDecay: 24
+      fireRate: 3 # Already present
       selectedMode: SemiAuto
       availableModes:
         - SemiAuto
       soundGunshot:
         path: /Audio/Weapons/Guns/Fire/762x25.ogg
-
     - type: ItemSlots
       slots:
         gun_magazine:
@@ -530,19 +547,20 @@
   components:
     - type: Sprite
       sprite: Civ14/Weapons/Guns/coltpockethammerless.rsi
-
     - type: Clothing
       sprite: Civ14/Weapons/Guns/coltpockethammerless.rsi
-      quickEquip: false
-
     - type: Gun
-      fireRate: 3
+      projectileSpeed: 17 # .32 ACP - weak
+      minAngle: 3
+      maxAngle: 35 # Very low recoil
+      angleIncrease: 3.5
+      angleDecay: 30
+      fireRate: 3 # Already present
       selectedMode: SemiAuto
       availableModes:
         - SemiAuto
       soundGunshot:
         path: /Audio/Weapons/Guns/Fire/32ACP.ogg
-
     - type: ItemSlots
       slots:
         gun_magazine:
@@ -569,19 +587,20 @@
   components:
     - type: Sprite
       sprite: Civ14/Weapons/Guns/coltpockethammerless.rsi
-
     - type: Clothing
       sprite: Civ14/Weapons/Guns/coltpockethammerless.rsi
-      quickEquip: false
-
     - type: Gun
-      fireRate: 3
+      projectileSpeed: 18 # .380 ACP
+      minAngle: 4
+      maxAngle: 40 # Low recoil
+      angleIncrease: 4
+      angleDecay: 28
+      fireRate: 3 # Already present
       selectedMode: SemiAuto
       availableModes:
         - SemiAuto
       soundGunshot:
         path: /Audio/Weapons/Guns/Fire/9mm.ogg
-
     - type: ItemSlots
       slots:
         gun_magazine:
@@ -608,19 +627,20 @@
   components:
     - type: Sprite
       sprite: Civ14/Weapons/Guns/bergmann.rsi
-
     - type: Clothing
       sprite: Civ14/Weapons/Guns/bergmann.rsi
-      quickEquip: false
-
     - type: Gun
-      fireRate: 3
+      projectileSpeed: 18 # Using 8mm Nambu stats as per chamber/sound
+      minAngle: 4
+      maxAngle: 45
+      angleIncrease: 4.2
+      angleDecay: 28
+      fireRate: 3 # Already present
       selectedMode: SemiAuto
       availableModes:
         - SemiAuto
       soundGunshot:
         path: /Audio/Weapons/Guns/Fire/Nambu.ogg
-
     - type: ItemSlots
       slots:
         gun_magazine:
@@ -651,9 +671,13 @@
       sprite: Civ14/Weapons/Guns/colt.rsi
     - type: Clothing
       sprite: Civ14/Weapons/Guns/colt.rsi
-      quickEquip: false
     - type: Gun
-      fireRate: 3
+      projectileSpeed: 18 # .45 ACP
+      minAngle: 8
+      maxAngle: 60 # Classic .45 kick
+      angleIncrease: 7
+      angleDecay: 20
+      fireRate: 3 # Already present
       selectedMode: SemiAuto
       availableModes:
         - SemiAuto
@@ -684,19 +708,20 @@
   components:
     - type: Sprite
       sprite: Civ14/Weapons/Guns/colt.rsi
-
     - type: Clothing
       sprite: Civ14/Weapons/Guns/colt.rsi
-      quickEquip: false
-
     - type: Gun
-      fireRate: 3
+      projectileSpeed: 18 # .45 ACP
+      minAngle: 7
+      maxAngle: 58 # Slightly better handling 1911
+      angleIncrease: 6.5
+      angleDecay: 22
+      fireRate: 3 # Already present
       selectedMode: SemiAuto
       availableModes:
         - SemiAuto
       soundGunshot:
         path: /Audio/Weapons/Guns/Fire/45ACP.ogg
-
     - type: ItemSlots
       slots:
         gun_magazine:
@@ -725,19 +750,20 @@
   components:
     - type: Sprite
       sprite: Civ14/Weapons/Guns/tt30.rsi
-
     - type: Clothing
       sprite: Civ14/Weapons/Guns/tt30.rsi
-      quickEquip: false
-
     - type: Gun
-      fireRate: 3
+      projectileSpeed: 22 # 7.62x25mm Tokarev - fast
+      minAngle: 6
+      maxAngle: 55
+      angleIncrease: 5.8
+      angleDecay: 24
+      fireRate: 3 # Already present
       selectedMode: SemiAuto
       availableModes:
         - SemiAuto
       soundGunshot:
         path: /Audio/Weapons/Guns/Fire/762x25.ogg
-
     - type: ItemSlots
       slots:
         gun_magazine:
@@ -766,19 +792,20 @@
   components:
     - type: Sprite
       sprite: Civ14/Weapons/Guns/makarov.rsi
-
     - type: Clothing
       sprite: Civ14/Weapons/Guns/makarov.rsi
-      quickEquip: false
-
     - type: Gun
-      fireRate: 3
+      projectileSpeed: 19 # 9x18mm Makarov - intermediate power
+      minAngle: 5
+      maxAngle: 48
+      angleIncrease: 5.2
+      angleDecay: 26
+      fireRate: 3 # Already present
       selectedMode: SemiAuto
       availableModes:
         - SemiAuto
       soundGunshot:
         path: /Audio/Weapons/Guns/Fire/762x25.ogg
-
     - type: ItemSlots
       slots:
         gun_magazine:
@@ -805,19 +832,20 @@
   components:
     - type: Sprite
       sprite: Civ14/Weapons/Guns/aps.rsi
-
     - type: Clothing
       sprite: Civ14/Weapons/Guns/aps.rsi
-      quickEquip: false
-
     - type: Gun
-      fireRate: 3
+      projectileSpeed: 19 # 9x18mm Makarov
+      minAngle: 5 # Heavier than PM, slightly more stable for single shots
+      maxAngle: 50
+      angleIncrease: 5.5
+      angleDecay: 25
+      fireRate: 3 # Already present
       selectedMode: SemiAuto
       availableModes:
         - SemiAuto
       soundGunshot:
         path: /Audio/Weapons/Guns/Fire/762x25.ogg
-
     - type: ItemSlots
       slots:
         gun_magazine:
@@ -846,19 +874,20 @@
   components:
     - type: Sprite
       sprite: Civ14/Weapons/Guns/m9beretta.rsi
-
     - type: Clothing
       sprite: Civ14/Weapons/Guns/m9beretta.rsi
-      quickEquip: false
-
     - type: Gun
-      fireRate: 3
+      projectileSpeed: 20 # 9mm
+      minAngle: 5
+      maxAngle: 50 # Standard modern 9mm (like Glock)
+      angleIncrease: 5
+      angleDecay: 25
+      fireRate: 3 # Already present
       selectedMode: SemiAuto
       availableModes:
         - SemiAuto
       soundGunshot:
         path: /Audio/Weapons/Guns/Fire/9mm.ogg
-
     - type: ItemSlots
       slots:
         gun_magazine:
@@ -887,19 +916,21 @@
   components:
     - type: Sprite
       sprite: Civ14/Weapons/Guns/tanm9.rsi
-
     - type: Clothing
       sprite: Civ14/Weapons/Guns/tanm9.rsi
-      quickEquip: false
-
+      quickEquip: true
     - type: Gun
-      fireRate: 3
+      projectileSpeed: 20 # 9mm
+      minAngle: 5
+      maxAngle: 50 # Same as regular M9
+      angleIncrease: 5
+      angleDecay: 25
+      fireRate: 3 # Already present
       selectedMode: SemiAuto
       availableModes:
         - SemiAuto
       soundGunshot:
         path: /Audio/Weapons/Guns/Fire/9mm.ogg
-
     - type: ItemSlots
       slots:
         gun_magazine:
@@ -928,19 +959,20 @@
   components:
     - type: Sprite
       sprite: Civ14/Weapons/Guns/jericho941.rsi
-
     - type: Clothing
       sprite: Civ14/Weapons/Guns/jericho941.rsi
-      quickEquip: false
-
     - type: Gun
-      fireRate: 3
+      projectileSpeed: 20 # 9mm
+      minAngle: 5
+      maxAngle: 48 # Heavy frame, good control
+      angleIncrease: 4.8
+      angleDecay: 27
+      fireRate: 3 # Already present
       selectedMode: SemiAuto
       availableModes:
         - SemiAuto
       soundGunshot:
         path: /Audio/Weapons/Guns/Fire/9mm.ogg
-
     - type: ItemSlots
       slots:
         gun_magazine:
@@ -967,19 +999,20 @@
   components:
     - type: Sprite
       sprite: Civ14/Weapons/Guns/deagle.rsi
-
     - type: Clothing
       sprite: Civ14/Weapons/Guns/deagle.rsi
-      quickEquip: false
-
     - type: Gun
-      fireRate: 3
+      projectileSpeed: 20 # .50 AE
+      minAngle: 15 # Massive recoil
+      maxAngle: 80
+      angleIncrease: 12
+      angleDecay: 15
+      fireRate: 3 # Already present
       selectedMode: SemiAuto
       availableModes:
         - SemiAuto
       soundGunshot:
         path: /Audio/Weapons/Guns/Fire/deagle.ogg
-
     - type: ItemSlots
       slots:
         gun_magazine:
@@ -1006,19 +1039,20 @@
   components:
     - type: Sprite
       sprite: Civ14/Weapons/Guns/deagle.rsi
-
     - type: Clothing
       sprite: Civ14/Weapons/Guns/deagle.rsi
-      quickEquip: false
-
     - type: Gun
-      fireRate: 3
+      projectileSpeed: 21 # .44 Magnum - very powerful
+      minAngle: 12
+      maxAngle: 75
+      angleIncrease: 10
+      angleDecay: 18
+      fireRate: 3 # Already present
       selectedMode: SemiAuto
       availableModes:
         - SemiAuto
       soundGunshot:
         path: /Audio/Weapons/Guns/Fire/deagle.ogg
-
     - type: ItemSlots
       slots:
         gun_magazine:
@@ -1047,19 +1081,20 @@
   components:
     - type: Sprite
       sprite: Civ14/Weapons/Guns/browning_hp.rsi
-
     - type: Clothing
       sprite: Civ14/Weapons/Guns/browning_hp.rsi
-      quickEquip: false
-
     - type: Gun
-      fireRate: 3
+      projectileSpeed: 20 # 9mm
+      minAngle: 5
+      maxAngle: 48 # Classic, good handling
+      angleIncrease: 4.9
+      angleDecay: 26
+      fireRate: 3 # Already present
       selectedMode: SemiAuto
       availableModes:
         - SemiAuto
       soundGunshot:
         path: /Audio/Weapons/Guns/Fire/9mm.ogg
-
     - type: ItemSlots
       slots:
         gun_magazine:
@@ -1088,19 +1123,20 @@
   components:
     - type: Sprite
       sprite: Civ14/Weapons/Guns/sti2011.rsi
-
     - type: Clothing
       sprite: Civ14/Weapons/Guns/sti2011.rsi
-      quickEquip: false
-
     - type: Gun
-      fireRate: 3
+      projectileSpeed: 18 # .45 ACP
+      minAngle: 6 # High-end, very good control for .45
+      maxAngle: 50
+      angleIncrease: 5.5
+      angleDecay: 25
+      fireRate: 3 # Already present
       selectedMode: SemiAuto
       availableModes:
         - SemiAuto
       soundGunshot:
         path: /Audio/Weapons/Guns/Fire/45ACP.ogg
-
     - type: ItemSlots
       slots:
         gun_magazine:

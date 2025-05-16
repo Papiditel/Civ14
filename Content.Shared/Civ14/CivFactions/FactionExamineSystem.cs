@@ -31,18 +31,18 @@ public sealed class FactionExamineSystem : EntitySystem
             }
             if (component.FactionName == examinerFaction.FactionName)
             {
-                var str = $"He is a member of your faction, [color=#007f00]{component.FactionName}[/color].";
+                var str = $"They are a member of your faction, [color=#007f00]{component.FactionName}[/color].";
                 args.PushMarkup(str);
             }
             else
             {
-                var str = $"He is a member of [color=#7f0000]{component.FactionName}[/color].";
+                var str = $"They are a member of [color=#7f0000]{component.FactionName}[/color].";
                 args.PushMarkup(str);
             }
         }
         else
         {
-            var str = $"He is not a member of any factions.";
+            var str = $"They are not a member of any factions.";
             args.PushMarkup(str);
         }
     }
