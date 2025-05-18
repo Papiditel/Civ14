@@ -10526,7 +10526,7 @@ entities:
     - type: Transform
       pos: 100.5,15.5
       parent: 2
-- proto: MarkerKOTHCamp
+- proto: MarkerKOTHCampWW2
   entities:
   - uid: 3554
     components:

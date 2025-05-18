@@ -29,6 +29,22 @@
         - France
 
 - type: entity
+  name: capturable area - KOTH Camp WW2
+  id: MarkerKOTHCampWW2
+  parent: MarkerCapturableArea
+  components:
+    - type: Sprite
+      sprite: Civ14/Markers/areas.rsi
+      state: capture_green
+    - type: CaptureArea
+      name: "the Castle"
+      captureDuration: 240 # 4 min
+      captureRadius: 6
+      capturableFactions:
+        - Soviet
+        - Germany
+
+- type: entity
   name: capturable area - KOTH Opushka
   id: MarkerKOTHOpushka
   parent: MarkerCapturableArea
@@ -42,4 +58,4 @@
       captureRadius: 3
       capturableFactions:
         - Soviet
-        - Germany       
+        - Germany

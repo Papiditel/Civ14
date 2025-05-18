@@ -161,7 +161,7 @@ namespace Content.Server.GameTicking
                         if (_gameTiming.CurTime < time)
                         {
                             _chatManager.DispatchServerMessage(player,
-                                Loc.GetString("rule-respawn-blocked", ("seconds", time.TotalSeconds - _gameTiming.CurTime.TotalSeconds)));
+                                Loc.GetString("rule-respawn-blocked", ("seconds", Math.Ceiling(time.TotalSeconds - _gameTiming.CurTime.TotalSeconds))));
                             return;
                         }
                     }
