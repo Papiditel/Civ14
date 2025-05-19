@@ -40,15 +40,14 @@
       gracewallActive: true
       gracewallRadius: 1.5
       blockingFactions: [Germany]
-    - type: GracewallRule
-      gracewallDuration: 1000
+      permanent: true
     - type: Physics
       bodyType: Static
     - type: Fixtures
       fixtures:
         gracewall: # Define a fixture for the area
           shape: !type:PhysShapeAabb
-            bounds: "-1.5, -1.5, 1.5, 1.5"
+            bounds: "-0.2, -1.5, 0.2, 1.5"
           # Collision layer/mask will be managed by the GracewallRuleSystem
           density: 100
           hard: true
@@ -73,15 +72,14 @@
       gracewallActive: true
       gracewallRadius: 1.5
       blockingFactions: [Soviet]
-    - type: GracewallRule
-      gracewallDuration: 1000
+      permanent: true
     - type: Physics
       bodyType: Static
     - type: Fixtures
       fixtures:
         gracewall: # Define a fixture for the area
           shape: !type:PhysShapeAabb
-            bounds: "-1.5, -1.5, 1.5, 1.5"
+            bounds: "-0.2, -1.5, 0.2, 1.5"
           # Collision layer/mask will be managed by the GracewallRuleSystem
           density: 100
           hard: true
@@ -92,4 +90,4 @@
           layer:
             - LowImpassable
             - MidImpassable
-            - HighImpassable            
+            - HighImpassable
