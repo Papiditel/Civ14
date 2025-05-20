@@ -67,12 +67,6 @@
             "directions": 4
         },
         {
-            "name": "flashlight_off"
-        },
-        {
-            "name": "flashlight_on"
-        },
-        {
             "name": "tube_empty",
             "directions": 4
         },
@@ -144,36 +138,6 @@
         },
         {
             "name": "modernlight_on"
-        },
-        {
-            "name": "militarylight_off"
-        },
-        {
-            "name": "militarylight_on"
-        },
-        {
-            "name": "militarylight_on_red"
-        },
-        {
-            "name": "militarylight_on_green"
-        },
-        {
-            "name": "militarylightalt_off"
-        },
-        {
-            "name": "militarylightalt_on"
-        },
-        {
-            "name": "militarylightalt_on_red"
-        },
-        {
-            "name": "militarylightalt_on_green"
-        },
-        {
-            "name": "flashlightjap_off"
-        },
-        {
-            "name": "flashlightjap_on"
         },
         {
             "name": "floodlight"
