@@ -81,7 +81,7 @@
 - type: job
   id: SovietCWRifleman
   name: job-name-civ-sovietcw-rifleman
-- faction: SovietCW
+  faction: SovietCW
   originalName: Strelok
   description: job-description-civ-sovietcw-rifleman
   playTimeTracker: JobSovietCWRifleman
