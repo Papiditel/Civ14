@@ -266,3 +266,18 @@
     - Predator
     - Soviet  
     - Germany
+
+- type: npcFaction
+  id: SovietCW
+  hostile:
+    - SimpleHostile
+    - Syndicate
+    - Xeno
+    - Zombie
+    - Revolutionary
+    - Dragon
+    - AllHostile
+    - Wizard
+    - Predator
+    - Germany
+    - US

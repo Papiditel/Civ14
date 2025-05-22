@@ -27,8 +27,10 @@
   id: USCaptainGear
   equipment:
     shoes: civ13_shoes_jackboots
-#    jumpsuit: civ13_uniform_American_captain_uniform
-#    head: civ13_head_M1_Captain_Helmet
+    jumpsuit: civ13_uniform_American_captain_uniform
+    head: civ13_head_M1_Captain_Helmet
+    belt: civ13_pistol_M1911A1
+    pocket1: civ13_magazine_M1911_magazine_(.45)
 
 # Sergeant
 
@@ -61,9 +63,12 @@
   id: USSergeantGear
   equipment:
     shoes: civ13_shoes_jackboots
-#    jumpsuit: civ13_uniform_US_Army_Officer_Uniform
-#  inhand:
-#    - civ13_boltaction_Karabiner_98k
+    jumpsuit: civ13_uniform_US_Army_Officer_Uniform
+    head: civ13_head_M1_1st_LT_Helmet
+    belt: civ13_pistol_M1911A1
+    pocket1: civ13_magazine_M1911_magazine_(.45)
+  inhand:
+    - civ13_ar_M16A2
 
 # Assault Rifleman
 
@@ -94,25 +99,25 @@
   id: USRiflemanGear
   equipment:
     shoes: civ13_shoes_jackboots
-#    jumpsuit: civ13_uniform_American_uniform
+    jumpsuit: civ13_uniform_American_uniform
     head: civ13_head_M1_Helmet
 #    belt: ClothingWebbingGermanRifleman
     pocket1: Gauze
     pocket2: Gauze
-#  inhand:
-#    - civ13_boltaction_Karabiner_98k
+  inhand:
+    - civ13_ar_M16A2
 
 - type: startingGear
   id: USRiflemanGear2
   equipment:
     shoes: civ13_shoes_jackboots
-#    jumpsuit: civ13_uniform_American_uniform
-    head: civ13_head_M1_Helmet_with_netting
+    jumpsuit: civ13_uniform_American_uniform
+    head: civ13_head_M1_Helmet_with_netting_1
 #    belt: ClothingWebbingGermanRifleman
     pocket1: Gauze
     pocket2: Gauze
-#  inhand:
-#    - civ13_boltaction_Karabiner_98k
+  inhand:
+    - civ13_ar_M16A2
 
 # Machinegunner
 
@@ -148,8 +153,8 @@
 #    belt: ClothingWebbingGermanMG
     pocket1: CombatKnife
     pocket2: Gauze
-#  inhand:
-#    - civ13_mg_MG34
+  inhand:
+    - civ13_mg_MG60
 
 - type: startingGear
   id: USMachinegunnerGear2
@@ -160,8 +165,8 @@
 #    belt: ClothingWebbingGermanMG
     pocket1: CombatKnife
     pocket2: Gauze
-#  inhand:
-#    - civ13_mg_MG34
+  inhand:
+   - civ13_mg_MG60
 
 # Medic
 
@@ -196,5 +201,5 @@
     belt: ClothingSatchelMedicalMedsFilled
     back: ClothingBackpackDuffelFilled
     pocket1: CombatKnife
-#  inhand:
-#    - civ13_boltaction_Karabiner_98k
+  inhand:
+    - civ13_ar_M16A2

@@ -69,3 +69,15 @@
     - USRifleman
     - USMachinegunner
     - USMedic
+
+- type: department
+  id: DepSovietCW
+  name: department-SovietCW
+  description: department-SovietCW-description
+  color: "#f30909"
+  roles:
+    - SovietCWCaptain
+    - SovietCWSergeant
+    - SovietCWRifleman
+    - SovietCWMachinegunner
+    - SovietCWMedic
