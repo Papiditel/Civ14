@@ -1530,7 +1530,6 @@
     - 1.0
     - 1.0
     - 1.0
-  baseTurf: Plating
   edgeSpritePriority: 2
   edgeSprites:
     SouthEast: /Textures/Tiles/Planet/dirt/single_edge.png
@@ -1549,30 +1548,35 @@
 
 - type: tile
   id: FloorDirtTaiga
+  name: tiles-dirt-floor-taiga
   parent: FloorDirt
   biome: Taiga
   suffix: Taiga
 
 - type: tile
   id: FloorDirtSemiArid
+  name: tiles-dirt-floor-semiarid
   parent: FloorDirt
   biome: SemiArid
   suffix: SemiArid
 
 - type: tile
   id: FloorDirtDesert
+  name: tiles-dirt-floor-desert
   parent: FloorDirt
   biome: Desert
   suffix: Desert
 
 - type: tile
   id: FloorDirtSavanna
+  name: tiles-dirt-floor-savanna
   parent: FloorDirt
   biome: Savanna
   suffix: Savanna
 
 - type: tile
   id: FloorDirtJungle
+  name: tiles-dirt-floor-jungle
   parent: FloorDirt
   biome: Jungle
   suffix: Jungle
