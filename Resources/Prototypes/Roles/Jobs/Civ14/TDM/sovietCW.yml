@@ -188,7 +188,7 @@
 - type: job
   id: SovietCWMedic
   name: job-name-civ-sovietcw-medic
-  faction: Soviet
+  faction: SovietCW
   originalName: Vrach
   description: job-description-civ-sovietcw-medic
   playTimeTracker: JobSovietCWMedic
