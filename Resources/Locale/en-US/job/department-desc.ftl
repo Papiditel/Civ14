@@ -14,3 +14,4 @@ department-French-description = The French are one of the factions present in th
 department-English-description = The English are one of the factions present in this map.
 department-German-description = The German are one of the factions present in this map.
 department-Soviet-description = The Soviet are one of the factions present in this map.
+department-US-description = The US are one of the factions present in this map.

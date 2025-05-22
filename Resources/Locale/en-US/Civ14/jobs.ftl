@@ -52,3 +52,9 @@ job-name-civ-soviet-submachinegunner = SMG
 job-name-civ-soviet-rifleman = Infantry
 job-name-civ-soviet-machinegunner = LMG
 job-name-civ-soviet-medic = Medic
+
+job-name-civ-us-cpt = Leader
+job-name-civ-us-sgt = Sergeant
+job-name-civ-us-rifleman = Infantry
+job-name-civ-us-machinegunner = LMG
+job-name-civ-us-medic = Medic

@@ -57,3 +57,15 @@
     - SovietRifleman
     - SovietMachinegunner
     - SovietMedic
+
+- type: department
+  id: DepUS
+  name: department-US
+  description: department-US-description
+  color: "#0919f3"
+  roles:
+    - USCaptain
+    - USSergeant
+    - USRifleman
+    - USMachinegunner
+    - USMedic

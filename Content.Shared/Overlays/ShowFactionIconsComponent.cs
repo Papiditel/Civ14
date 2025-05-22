@@ -57,3 +57,12 @@ public sealed partial class ShowSovietFactionIconsComponent : Component
     [DataField("factionIcon", customTypeSerializer: typeof(PrototypeIdSerializer<FactionIconPrototype>))]
     public string FactionIcon = "SovietFaction";
 }
+public sealed partial class ShowUsFactionIconsComponent : Component
+{
+
+    /// <summary>
+    /// The faction icon to display
+    /// </summary>
+    [DataField("factionIcon", customTypeSerializer: typeof(PrototypeIdSerializer<FactionIconPrototype>))]
+    public string FactionIcon = "UsFaction";
+}

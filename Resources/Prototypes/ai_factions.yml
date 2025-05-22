@@ -235,7 +235,8 @@
     - Wizard
     - Predator
     - Germany
-
+    - US
+    
 - type: npcFaction
   id: Germany
   hostile:
@@ -248,4 +249,20 @@
     - AllHostile
     - Wizard
     - Predator
-    - Soviet      
+    - Soviet
+    - US
+     
+- type: npcFaction
+  id: US
+  hostile:
+    - SimpleHostile
+    - Syndicate
+    - Xeno
+    - Zombie
+    - Revolutionary
+    - Dragon
+    - AllHostile
+    - Wizard
+    - Predator
+    - Soviet  
+    - Germany

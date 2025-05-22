@@ -14,3 +14,4 @@ department-French = France
 department-English = England
 department-German = Germany
 department-Soviet = Soviet Union
+department-US = United States
