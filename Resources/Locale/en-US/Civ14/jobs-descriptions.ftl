@@ -34,3 +34,9 @@ job-description-civ-us-sgt = You are the right hand of your captain. Direct troo
 job-description-civ-us-rifleman = You are a rifleman, the US standard of the army.
 job-description-civ-us-machinegunner = You are a machinegunner. Use your superior firepower to suppress enemies at a distance!
 job-description-civ-us-medic = As a field surgeon, keep your troops alive!
+
+job-description-civ-sovietcw-cpt = You are the highest ranking in your faction. Lead your men to victory!
+job-description-civ-sovietcw-sgt = You are the right hand of your captain. Direct troops and order artillery strikes on the enemy while answering to the Kapitan!
+job-description-civ-sovietcw-rifleman = You are a rifleman, the soviet standard of the army. For the Motherland!
+job-description-civ-sovietcw-machinegunner = You are a machinegunner. Use your superior firepower to suppress enemies at a distance!
+job-description-civ-sovietcw-medic = As a field surgeon, keep your troops alive!
