@@ -9,7 +9,6 @@
       state: money
     - type: Item
       sprite: Civ14/Objects/trash.rsi
-      state: money
       size: Small
     - type: Tag
       tags:
