@@ -1,3 +1,22 @@
+# gulag
+- type: playTimeTracker
+  id: JobGulagSovietCaptain
+
+- type: playTimeTracker
+  id: JobGulagSovietSergeant
+
+- type: playTimeTracker
+  id: JobGulagSovietGuard
+
+- type: playTimeTracker
+  id: JobGulagPrisonerGerman
+
+- type: playTimeTracker
+  id: JobGulagPrisonerUkrainian
+
+- type: playTimeTracker
+  id: JobGulagPrisonerPolish
+  
 # modern
 - type: playTimeTracker
   id: JobInsurgentLeader
