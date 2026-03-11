@@ -46,7 +46,7 @@ jobs:
         uses: actions/checkout@v4
         with:
           repository: taislin/civ14_compileds
-          token: ${{ secrets.TARGET_REPO_TOKEN }}
+          token: ${{ secrets.GITHUB_TOKEN }}
           path: target-repo
 
       - name: Update Target Repo
